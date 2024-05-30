@@ -88,11 +88,11 @@
 
 
 .select-border{    
-    border: 2px solid rgb(23, 175, 230);
+    opacity: 1;
 }
 
 .none-select-border{
-    border: 1px solid rgb(177, 228, 246);
+    opacity: 0.5;
 }
 
 .scroll-btn-area{    
@@ -148,12 +148,8 @@
         display:none;
     }
 
-    .sub-photo{     
-        opacity: 0.8;    
-    }
-
     .sub-photo:hover{         
-        opacity: 1;
+        opacity: 0.8;
 }
     
 }

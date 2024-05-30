@@ -311,13 +311,7 @@
                     <p>
                         販売はBASEにて行っております。
                         <br>
-                        BASEで販売品や料金を確認できます。
-                        <br>
-                        <span class="emphasis item-flash">2023年の収穫分は多くのお客様からのご好評によりは完売致しました。
-                            <br>
-                            誠にありがとうございました。</span>
-                        <br>
-                        
+                        BASEでも販売品や料金を確認できます。                      
                         <br>
                         <a href="{{ env('base_url')}}" target="_blank" class="underline">
                             たかすじファーム購入ページ

@@ -20,8 +20,12 @@
 
         <div class="col-12">
         
-            <div class="row m-0 p-0 ">
-                <div class="col-12 text-end">                    
+            <div class="row mt-1 p-0">
+
+                <div class="col-6 text-start">                    
+                    <button type='button' class='btn btn-outline-primary page-transition-button' data-url="{{ route('web.merchandise')}}">商品紹介ページ</button>
+                </div>
+                <div class="col-6 text-end">                    
                     <button class='btn btn-success' type='button' onclick= "location.href='{{ route('settings.merchandise_m.settings_screen' ,['merchandise_id' =>0]) }}'">新規登録</button>
                 </div>
             </div>
@@ -131,7 +135,7 @@
                                 >説明</button>
 
 
-                                <button type="button" class="btn btn-outline-danger base_page_button"                                 
+                                <button type="button" class="btn btn-outline-danger page-transition-button"                                 
                                 data-url="{{$item->sales_url}}"                                
                                 >販売サイト</button>          
                             </td>
@@ -205,14 +209,7 @@
         
     });
 
-    
-    //販売サイト移行
-    $(document).on("click", ".base_page_button", function (e) {
-
-        var url = $(this).data('url');
-        window.open(url, '_blank');
-    });
-
+ 
 </script>
 
 

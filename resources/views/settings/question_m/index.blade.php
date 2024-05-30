@@ -17,8 +17,12 @@
 
         <div class="col-12">
         
-            <div class="row m-0 p-0 ">
-                <div class="col-12 text-end">                    
+            <div class="row mt-1 p-0">
+
+                <div class="col-6 text-start">                    
+                    <button type='button' class='btn btn-outline-primary page-transition-button' data-url="{{ route('web.inquiry')}}">質問ページ</button>
+                </div>
+                <div class="col-6 text-end">                    
                     <button class='btn btn-success' type='button' onclick= "location.href='{{ route('settings.question_m.settings_screen' ,['question_id' =>0]) }}'">新規登録</button>
                 </div>
             </div>

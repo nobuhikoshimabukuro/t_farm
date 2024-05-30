@@ -17,8 +17,11 @@
 
         <div class="col-12">
         
-            <div class="row m-0 p-0 ">
-                <div class="col-12 text-end">
+            <div class="row mt-1 p-0">
+                <div class="col-6 text-start">                    
+                    <button type='button' class='btn btn-outline-primary page-transition-button' data-url="{{ route('web.index')}}">Webページ</button>
+                </div>
+                <div class="col-6 text-end">                    
                     <button class='btn btn-success' type='button' onclick= "location.href='{{ route('settings.instagram_t.settings_screen' ,['instagram_id' =>0]) }}'">新規登録</button>
                 </div>
             </div>

@@ -6,6 +6,9 @@ body{
     height: 100%;
   }
   
+  .container{
+    margin-bottom: 5vh;
+  }
   
 a{
     color: #333;
@@ -42,7 +45,7 @@ a{
 
 
 .item-flash{
-	animation: flash 3s linear infinite;
+	animation: flash 2s linear infinite;
 }
 
 @keyframes flash {

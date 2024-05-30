@@ -212,6 +212,15 @@ function set_sales_flg(sales_flg){
   $("#sales_flg").val(sales_flg);		
 }
 
+
+//画面遷移ボタン別タブ
+$(document).on("click", ".page-transition-button", function (e) {
+
+  var url = $(this).data('url');
+  window.open(url, '_blank');
+
+});
+
 // クリアボタンがクリックされたら
 $('#clear-button').click(function(){
 
