@@ -297,7 +297,7 @@ class merchandise_m_controller extends Controller
             $error_message = $e->getMessage();
             $result_array = array(
                 "result" => "error",
-                "message" => "画像更新処理でエラーが発生しました。",
+                "message" => "画像更新処理でエラーが発生しました。【" . $error_message . "】",
             );
         }
 

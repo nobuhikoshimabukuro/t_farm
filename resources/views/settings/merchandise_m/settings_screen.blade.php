@@ -725,10 +725,13 @@
 
                     var message = result_array["message"];
 
+                    
+
                     //{{-- アラートメッセージ表示 --}}
                     var error_list = '';
                     error_list += '<li>' + message + '</li>';                     
-                        
+                    
+                    alert(message);
                     
                 }
 
