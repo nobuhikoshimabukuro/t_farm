@@ -1,5 +1,43 @@
 @php 
     $system_version = "?system_version=" . env('system_version');
+
+    $route_array = [
+
+        [
+            'label' => '管理者',
+            'route' => route('settings.menu'),
+            'src' => asset('img/logo/0003.jpg'),
+            'display' => true,
+        ],
+
+        [
+            'label' => 'TOP',
+            'route' => route('web.index'),
+            'src' => asset('img/logo/0003.jpg'),
+            'display' => true,
+        ],
+
+        [
+            'label' => '商品紹介',
+            'route' => route('web.merchandise'),
+            'src' => asset('img/logo/0003.jpg'),
+            'display' => true,
+        ],
+
+        [
+            'label' => 'お問い合わせ',
+            'route' => route('web.farminfo'),
+            'src' => asset('img/logo/0003.jpg'),
+            'display' => true,
+        ],
+
+        [
+            'label' => '農園情報',
+            'route' => route('web.farminfo'),
+            'src' => asset('img/logo/0003.jpg'),
+            'display' => false,
+        ]
+    ];
 @endphp
 
 <!doctype html>
@@ -11,6 +49,10 @@
     <link href="{{ asset('css/bootstrap.css') . $system_version }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') . $system_version }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') . $system_version }}" rel="stylesheet">    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+1p&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
     
     <link rel="shortcut icon" href="{{ asset('img/logo/logo.ico')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('img/logo/logo.png')}}" sizes="180x180">
@@ -137,46 +179,23 @@
                 </h3>              
             
 
-            {{-- <div class="title">                
-                <p>
-                    沖縄の太陽と風を詰め込んだ<br>絶品のマンゴーをお楽しみください。
-                </p>
-            </div> --}}
-
 
             <!--▽▽ヘッダーリスト▽▽-->
             
                 <nav class="pc">  <!--pcクラスを追記-->
                     <ul>
 
-                        <li>
-                            <a href="{{ route('settings.menu') }}">                                
-                                管理者
-                            </a>
-                        </li>
+                        @foreach ($route_array as $info)
+                            @if($info["display"])
+                                <li>
+                                    <a href="{{$info['route']}}">                                
+                                        {{$info['label']}}
+                                    </a>
+                                </li>
+                            @endif
+                        @endforeach
 
-                        <li>
-                            <a href="{{ route('web.index') }}">
-                                TOP
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('web.merchandise') }}">
-                                商品紹介
-                            </a>
-                        </li>
-        
-                        <li>
-                            <a href="{{ route('web.inquiry') }}">
-                                お問い合わせ
-                            </a>
-                        </li>
-    
-                        <li>
-                            <a href="{{ route('web.farminfo') }}">
-                                農園情報
-                            </a>
-                        </li>
+                       
                         
                         <li>
                             <a class="" href="{{ env('instagram_url')}}" target="_blank">
@@ -234,40 +253,18 @@
             <nav class="sm">
                 <ul>
 
-                    <li>
-                        <a href="{{ route('settings.menu') }}">
-                            <img id="" src="{{ asset('img/logo/0003.jpg') }}" class="merchandise_logo" alt="tf_logo">
-                            管理者
-                        </a>
-                    </li>
+                    @foreach ($route_array as $info)
+                        @if($info["display"])
+                            <li>
+                                <a href="{{$info['route']}}">         
+                                    <img id="" src="{{$info['src']}}" class="merchandise_logo" alt="tf_logo">                       
+                                    {{$info['label']}}
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
 
-                    <li>
-                        <a href="{{ route('web.index') }}">
-                            <img id="" src="{{ asset('img/logo/0003.jpg') }}" class="merchandise_logo" alt="tf_logo">
-                            TOP
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('web.merchandise') }}">
-                            <img id="" src="{{ asset('img/logo/0003.jpg') }}" class="merchandise_logo" alt="tf_logo">
-                            商品紹介
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('web.inquiry') }}">                            
-                            <img id="" src="{{ asset('img/logo/0003.jpg') }}" class="merchandise_logo" alt="tf_logo">
-                            お問い合わせ
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('web.farminfo') }}">                            
-                            <img id="" src="{{ asset('img/logo/0003.jpg') }}" class="merchandise_logo" alt="tf_logo">
-                            農園情報
-                        </a>
-                    </li>
+                    
                     
                     <li>
                         <a class="" href="{{ env('instagram_url')}}" target="_blank">                            

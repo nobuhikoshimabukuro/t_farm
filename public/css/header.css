@@ -8,7 +8,7 @@ header {
     height: 60px;
     width: 100%;
     padding: 0px 15px;    
-    background-color:rgb(252, 252, 238);        
+    background-color:rgb(251, 251, 225);        
     position: fixed;
     top: 0;
     z-index: 10;
@@ -50,9 +50,9 @@ header .cart_logo {
   }
   
   header a {
-    color: #270e04;
+    color: #07021e;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 550;
     display: block;
     line-height: 60px;
     padding: 0 10px;

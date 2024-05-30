@@ -52,7 +52,7 @@
 
 .merchandise-image{        
         width: 100%;    
-        height:  100%;
+        /* height:  100%; */
         object-fit: contain; 
         
     }
@@ -243,7 +243,10 @@
 
             </div>
 
-            <div class="col-11 mt-1 p-0">
+            <div class="col-11 mt-2 p-0">
+                <h4>
+                    画像設定
+                </h4>
 
                 <div class="merchandise-image-outer-area">
                     {{-- jQueryで作成 --}}
@@ -277,7 +280,7 @@
             <input type="hidden" name="image_change_flg" id="image_change_flg" value="0">
 
             <div class="modal-header">               
-                <h5 class="modal-title" id=></h5>
+                <h5 class="modal-title" >商品画像登録</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>                
             <form action="{{ route('settings.merchandise_m.image_upload') }}" id='image_upload-form'method="post" enctype="multipart/form-data">
@@ -377,10 +380,9 @@
 
             <div class="modal-footer">         
 
-                <div class="col-6 m-0 p-0 text-start">                                
-                </div>
+                
 
-                <div class="col-6 m-0 p-0 text-end">
+                <div class="col-12 m-0 p-0 text-end">
                     <button type="button" class="btn btn-success image_info_change-button" data-processbranch="1">登録</button>
                     <button type="button" class="btn btn-danger image_info_change-button" data-processbranch="0">削除</button>                    
                     <button type="button" id="" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
@@ -482,7 +484,8 @@
 
         $("#branch_number").val(branch_number);
 
-        $("#image_delete-button").removeClass("d-none");
+        $('.image_info_change-button[data-processbranch="0"]').removeClass('d-none');
+        
 
         var title = "";
         var asset_path = "{{asset('img/no_image/no_image.jpeg')}}";
@@ -491,7 +494,7 @@
 
         if(branch_number == 0){
             //新規登録処理の為、削除ボタンを非表示            
-            $("#image_delete-button").addClass("d-none");
+            $('.image_info_change-button[data-processbranch="0"]').addClass('d-none');            
         }else{
 
             title = $(this).data('title');
