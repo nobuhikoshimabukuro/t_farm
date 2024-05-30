@@ -41,7 +41,14 @@ $route_array = [
         [
             'label' => '質問管理',
             'route' => route('settings.question_m.index'),
-            'icon' => 'fas fa-question-circle fa-3x mb-1"',
+            'icon' => 'fas fa-question-circle fa-3x mb-1',
+            'display' => true,
+        ],
+
+        [
+            'label' => 'systemCheck',
+            'route' => route('settings.system_check'),            
+            'icon' => '',
             'display' => true,
         ]
     ];

@@ -36,6 +36,8 @@ Route::post('settings/login_check', [settings_controller::class, 'login_check'])
 
 Route::get('settings/menu', [settings_controller::class, 'menu'])->name('settings.menu');
 
+Route::get('settings/system_check', [settings_controller::class, 'system_check'])->name('settings.system_check');
+
 Route::get('settings/merchandise_m/index', [merchandise_m_controller::class, 'index'])->name('settings.merchandise_m.index');
 Route::get('settings/merchandise_m/settings_screen', [merchandise_m_controller::class, 'settings_screen'])->name('settings.merchandise_m.settings_screen');
 Route::post('settings/merchandise_m/save', [merchandise_m_controller::class, 'save'])->name('settings.merchandise_m.save');

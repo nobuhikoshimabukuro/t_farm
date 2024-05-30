@@ -267,7 +267,9 @@ class merchandise_m_controller extends Controller
                 
                 $table->merchandise_id = $merchandise_id;
                 $table->branch_number = $branch_number;
-                $table->title = $request->title;                
+
+                
+                $table->title = is_null($request->title) ? "未設定" : $request->title;                    
                 $table->folder_name = $folder_name;
                 $table->used_flg = $request->used_flg;
                 $table->display_order = $request->display_order;

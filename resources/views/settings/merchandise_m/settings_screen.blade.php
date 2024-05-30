@@ -45,14 +45,14 @@
 }
 
 .merchandise-image-preview-area{
-    aspect-ratio: 16 / 9;
+    /* aspect-ratio: 16 / 9; */
     padding: 3px;    
     border: 1px solid;
 }
 
 .merchandise-image{        
         width: 100%;    
-        /* height:  100%; */
+        height:  100%;
         object-fit: contain; 
         
     }

@@ -90,6 +90,14 @@ class settings_controller extends Controller
         return view('settings/menu');
     }
 
+    function system_check(Request $request)
+    {
+        if(!common::session_confirmation()){
+            return redirect()->route('settings.login');
+        }
+        return view('settings/system_check');
+    }
+
     function logout(Request $request)
     {
         common::session_remove();
