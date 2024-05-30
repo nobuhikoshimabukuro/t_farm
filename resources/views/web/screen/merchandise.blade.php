@@ -50,7 +50,7 @@
 }
 
 .photo-select-area{   
-   overflow-x:scroll;     
+   overflow-x:auto;     
    /* overflow-x:none;     */
 }
 
@@ -217,7 +217,8 @@
                 $merchandise_id = $info->merchandise_id;
                 $merchandise_name = $info->merchandise_name;
                 $merchandise_description = $info->merchandise_description;
-                $sales_url = $info->sales_url;
+                $price = $info->price;
+                $sales_url = $info->sales_url;                
                 $sales_flg = $info->sales_flg;
 
                 $merchandise_image_t = $info->merchandise_image_t;                
@@ -234,8 +235,10 @@
                         <h3 class="merchandise-name">
                             {{$merchandise_name}}
                         </h3>
+                    </div>    
 
-                        <div class="text-start">                        
+                    <div class="merchandise-info-area row m-0 p-0">                        
+                        <div class="col-6 text-start" >
                             @if($sales_flg == 0)
                                 <div class="sold_out">
                                     完売
@@ -246,7 +249,13 @@
                                 </div>
                             @endif
                         </div>
-                    </div>    
+
+                        <div class="col-6 text-end" >                    
+                            <div class="price">
+                                ￥{{number_format($price)}}
+                            </div>
+                        </div>
+                    </div> 
 
 
                     <div class="col-12 m-0 p-0">     
