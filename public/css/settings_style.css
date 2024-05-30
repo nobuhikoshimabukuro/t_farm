@@ -1,0 +1,515 @@
+.container{  
+  background-color: rgba(229, 244, 231, 0.2);  
+}
+
+.screen-title{
+  margin: 2px;
+  padding: 2px;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.eye-area{
+  width: 70px;  
+}
+
+.fa-eye{
+  font-size: 26px;
+  color: rgb(107, 187, 203);
+}
+
+.fa-eye-slash{
+  font-size: 25px;
+  color: rgb(125, 43, 13);
+}
+
+.display_order-select{
+  width: 50px;
+  text-align: center;
+}
+
+
+.inoperable{
+  pointer-events: none;
+  opacity:0.5;
+}
+
+
+
+.instagram-area{   
+  overflow-x:auto;       
+}
+
+
+
+
+
+
+
+/* データ一覧画面の設定 Start */
+
+
+#data-display-area{
+
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.scroll-wrap-x {
+  overflow-x: scroll;
+}
+
+.scroll-wrap-y {
+  overflow-y: scroll;
+}
+
+.data-info-table{  
+  width: 100%;
+  margin: 5px 0 5px 0;
+  border-collapse:separate;
+  border-spacing: 0;    
+  white-space: nowrap;
+
+}
+
+
+/* 
+.data-info-table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;  
+  padding: 5px 0;
+  white-space: nowrap;
+}
+
+.data-info-table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;    
+  padding: 5px 10px;
+  white-space: nowrap;
+} 
+
+
+
+
+*/
+
+
+.data-info-table th{  
+  color:white;
+  font-weight: bold;
+  background: linear-gradient(#829ebc,#225588);  
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.data-info-table td{  
+  padding: 5px 10px;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #012549;
+  border-bottom: 1px solid #a8b7c5;
+}
+
+
+
+.data-info-table th:first-child{
+  border-radius: 5px 0 0 0;  
+  
+}
+
+.data-info-table th:last-child{
+  border-radius: 0 5px 0 0;
+  
+}
+
+.data-info-table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+.data-info-table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+} 
+
+/* データ一覧画面の設定 End*/
+
+
+
+
+
+/* データ入力画面の設定 Start*/
+.input-table th,
+.input-table td {
+    padding: 3px;
+}
+
+
+/* スマホ用 */
+@media (max-width:768px) {  /*画面幅が768px以下の場合とする*/
+
+   
+
+    .input-table th,
+    .input-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .input-table th {
+        border-right: none;
+        text-align: left;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+.used_flg-area{
+  height: 45px;
+  padding: 3px;
+  width: 100px;
+}
+
+
+
+.used_flg-label{
+  height: 100%;
+  width: 100%; 
+  border: solid 1px rgb(1, 30, 27);
+  border-bottom: 3px solid #00662d;
+  color:  rgb(1, 30, 27);
+  background-color:white;   
+  font-weight: 400;        
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.used_flg-label:hover{             
+  margin-top: 3px;
+}
+
+.used_flg_0-select
+{
+  background-color:white;
+  color:red;
+  /* border: solid 1px rgb(226, 125, 125); */
+  border-color:rgb(226, 125, 125);
+  /* animation: used_flg_0_blinking 1s infinite; */
+  font-weight: 900;
+  
+}
+
+
+.used_flg_0-check-mark {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 8px;
+  border-left: 3px solid red;
+  border-bottom: 3px solid red;
+  transform: rotate(-45deg);
+  animation: fadeIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+
+
+.used_flg_1-select
+{
+  background-color:white;
+  color:Blue;
+  /* border: solid 1px Blue; */
+  border-color:Blue;
+  /* animation: used_flg_1_blinking 1s infinite; */
+  font-weight: 900;
+  
+}
+
+
+.used_flg_1-check-mark {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 8px;
+  border-left: 3px solid Blue;
+  border-bottom: 3px solid Blue;
+  transform: rotate(-45deg);
+  animation: fadeIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  animation: used_flg_0_blinking 1s infinite;
+}
+
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes used_flg_0_blinking {
+  0% {
+      display: none;
+  }
+  50% {
+      display: block;
+  }
+  100% {
+      display: none;
+  }
+}
+
+@keyframes used_flg_1_blinking {
+  0% {
+      border-color: transparent;
+  }
+  50% {
+      border-color: Blue;
+  }
+  100% {
+      border-color: transparent;
+  }
+} 
+/* データ入力画面の設定 Start*/
+
+
+
+
+
+
+.merchandise_image_used_flg-area{
+  height: 45px;
+  padding: 3px;
+  width: 100px;
+}
+
+
+
+.merchandise_image_used_flg-label{
+  height: 100%;
+  width: 100%; 
+  border: solid 1px rgb(1, 30, 27);
+  border-bottom: 3px solid #00662d;
+  color:  rgb(1, 30, 27);
+  background-color:white;   
+  font-weight: 400;        
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.merchandise_image_used_flg-label:hover{             
+  margin-top: 3px;
+}
+
+.merchandise_image_used_flg_0-select
+{
+  background-color:white;
+  color:red;
+  /* border: solid 1px rgb(226, 125, 125); */
+  border-color:rgb(226, 125, 125);
+  /* animation: merchandise_image_used_flg_0_blinking 1s infinite; */
+  font-weight: 900;
+  
+}
+
+
+.merchandise_image_used_flg_0-check-mark {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 8px;
+  border-left: 3px solid red;
+  border-bottom: 3px solid red;
+  transform: rotate(-45deg);
+  animation: fadeIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+
+
+.merchandise_image_used_flg_1-select
+{
+  background-color:white;
+  color:Blue;
+  /* border: solid 1px Blue; */
+  border-color:Blue;
+  /* animation: merchandise_image_used_flg_1_blinking 1s infinite; */
+  font-weight: 900;
+  
+}
+
+
+.merchandise_image_used_flg_1-check-mark {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 8px;
+  border-left: 3px solid Blue;
+  border-bottom: 3px solid Blue;
+  transform: rotate(-45deg);
+  animation: fadeIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  animation: merchandise_image_used_flg_0_blinking 1s infinite;
+}
+
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes merchandise_image_used_flg_0_blinking {
+  0% {
+      display: none;
+  }
+  50% {
+      display: block;
+  }
+  100% {
+      display: none;
+  }
+}
+
+@keyframes merchandise_image_used_flg_1_blinking {
+  0% {
+      border-color: transparent;
+  }
+  50% {
+      border-color: Blue;
+  }
+  100% {
+      border-color: transparent;
+  }
+} 
+
+
+
+.sales_flg-area{
+  height: 45px;
+  padding: 3px;
+  width: 100px;
+}
+
+
+
+.sales_flg-label{
+  height: 100%;
+  width: 100%; 
+  border: solid 1px rgb(1, 30, 27);
+  border-bottom: 3px solid #00662d;
+  color:  rgb(1, 30, 27);
+  background-color:white;   
+  font-weight: 400;        
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sales_flg-label:hover{             
+  margin-top: 3px;
+}
+
+.sales_flg_0-select
+{
+  background-color:white;
+  color:red;
+  /* border: solid 1px rgb(226, 125, 125); */
+  border-color:rgb(226, 125, 125);
+  /* animation: sales_flg_0_blinking 1s infinite; */
+  font-weight: 900;
+  
+}
+
+
+.sales_flg_0-check-mark {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 8px;
+  border-left: 3px solid red;
+  border-bottom: 3px solid red;
+  transform: rotate(-45deg);
+  animation: fadeIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+
+
+.sales_flg_1-select
+{
+  background-color:white;
+  color:Blue;
+  /* border: solid 1px Blue; */
+  border-color:Blue;
+  /* animation: sales_flg_1_blinking 1s infinite; */
+  font-weight: 900;
+  
+}
+
+
+.sales_flg_1-check-mark {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 8px;
+  border-left: 3px solid Blue;
+  border-bottom: 3px solid Blue;
+  transform: rotate(-45deg);
+  animation: fadeIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  animation: sales_flg_0_blinking 1s infinite;
+}
+
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes sales_flg_0_blinking {
+  0% {
+      display: none;
+  }
+  50% {
+      display: block;
+  }
+  100% {
+      display: none;
+  }
+}
+
+@keyframes sales_flg_1_blinking {
+  0% {
+      border-color: transparent;
+  }
+  50% {
+      border-color: Blue;
+  }
+  100% {
+      border-color: transparent;
+  }
+} 
