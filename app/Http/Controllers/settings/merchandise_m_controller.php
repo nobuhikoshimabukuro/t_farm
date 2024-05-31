@@ -291,7 +291,7 @@ class merchandise_m_controller extends Controller
 
                         $result_array = array(
                             "result" => "error",
-                            "message" => "画像更新処理でエラーが発生しました。【E002】",
+                            "message" => "画像更新処理でエラーが発生しました。【" .$test  . "】",
                         );
     
                         return response()->json(['result_array' => $result_array]);
