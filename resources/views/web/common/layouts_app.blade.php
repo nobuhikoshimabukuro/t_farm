@@ -26,7 +26,7 @@
 
         [
             'label' => 'お問い合わせ',
-            'route' => route('web.farminfo'),
+            'route' => route('web.inquiry'),
             'src' => asset('img/logo/0003.jpg'),
             'display' => true,
         ],
