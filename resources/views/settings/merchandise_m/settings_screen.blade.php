@@ -482,8 +482,9 @@
 
         var branch_number = $(this).data('branchnumber');
 
-        $("#branch_number").val(branch_number);
+        
 
+        //削除ボタンを可視化
         $('.image_info_change-button[data-processbranch="0"]').removeClass('d-none');
         
 
@@ -493,7 +494,7 @@
         var used_flg = 1;
 
         if(branch_number == 0){
-            //新規登録処理の為、削除ボタンを非表示            
+            //新規登録処理の為、削除ボタンを不可視化
             $('.image_info_change-button[data-processbranch="0"]').addClass('d-none');            
         }else{
 
@@ -501,6 +502,7 @@
             asset_path = $(this).data('assetpath');
             display_order = $(this).data('displayorder');
             used_flg = $(this).data('usedflg');
+
         }
 
 
@@ -519,8 +521,7 @@
         // #Previewの中に追加
         merchandise_image_area.appendChild(img);
 
-
-
+        $("#branch_number").val(branch_number);
         $("#merchandise_image_title").val(title);
         $("#merchandise_image_display_order").val(display_order);
         $("#merchandise_image_used_flg").val(used_flg);
@@ -649,19 +650,27 @@
     // 画像更新関連button
     $('.image_info_change-button').click(function(){
     
+        var process_branch = $(this).data('processbranch');
+        var image_change_flg = $("#image_change_flg").val();
+        
+        // 画像登録処理かつ画像変更時は画像設定されているかチェックする        
+        if(process_branch == 0 || image_change_flg == 1){
+
+            // 画像選択チェック
+            var imageInput = $('#merchandise_image_input')[0];
+            if (imageInput.files.length === 0) {
+                alert("画像が設定されていません。");            
+                return;
+            }
+        }
+
         // ２重送信防止
         // 保存tを押したらdisabled, 10秒後にenable
         $(this).prop("disabled", true);
 
         setTimeout(function () {
-            $('.image_info_change-button').prop("disabled", false);
-            
+            $('.image_info_change-button').prop("disabled", false);            
         }, 3000);
-
-
-        var process_branch = $(this).data('processbranch');       
-
-        var image_change_flg = $("#image_change_flg").val();
 
         var merchandise_id = $("#merchandise_id").val();
         var branch_number = $("#branch_number").val();
@@ -670,8 +679,6 @@
         var used_flg = $("#merchandise_image_used_flg").val();
         var display_order = $("#merchandise_image_display_order").val();
         
-        
-
         var form_data = new FormData($('#image_upload-form').get(0));
         form_data.append('merchandise_id', merchandise_id);
         form_data.append('branch_number', branch_number);

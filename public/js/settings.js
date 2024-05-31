@@ -96,21 +96,21 @@ function fullToHalf(input) {
 
 function end_loader() {
 
-    var elements = document.querySelectorAll('.loader-area');
-  
-    // 取得した要素を削除
-    elements.forEach(function(element) {
-      element.remove();
-    });
-  
-  
-    var elements = document.querySelectorAll('.loader');
-  
-    // 取得した要素を削除
-    elements.forEach(function(element) {
-      element.remove();
-    });
-  }
+  var elements = document.querySelectorAll('.loader-area');
+
+  // 取得した要素を削除
+  elements.forEach(function(element) {
+    element.remove();
+  });
+
+
+  var elements = document.querySelectorAll('.loader');
+
+  // 取得した要素を削除
+  elements.forEach(function(element) {
+    element.remove();
+  });
+}
   
   // 引数は操作制御したいセレクタ
   function start_processing(target){
@@ -180,6 +180,7 @@ function set_merchandise_image_used_flg(merchandise_image_used_flg){
         
 
   $('#display_order-area').removeClass('inoperable');
+  
   if(merchandise_image_used_flg == 0){
       $('#display_order-area').addClass('inoperable');
   }
@@ -259,5 +260,24 @@ $('.page_transition-button').click(function(){
   }
   
   window.location.href = url;
+
+});
+
+
+//モーダルを開いた時の共通イベント
+$('.modal').on('show.bs.modal',function(e){
+  
+  setTimeout(function() {
+      $('body').css('overflow-y', 'hidden');
+  }, 500); // 500ミリ秒のディレイ
+
+});
+
+//モーダルを閉じた時の共通イベント
+$('.modal').on('hidden.bs.modal', function() {
+
+  setTimeout(function() {
+    $('body').css('overflow-y', 'auto');
+  }, 500); // 500ミリ秒のディレイ
 
 });
