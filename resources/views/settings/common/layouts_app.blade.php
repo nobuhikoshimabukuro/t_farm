@@ -136,7 +136,7 @@
     </div>
 </div>
 
-<body>
+<body id="settings-body">
 
     @php
 
