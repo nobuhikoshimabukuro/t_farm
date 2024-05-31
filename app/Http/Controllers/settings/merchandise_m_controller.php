@@ -162,6 +162,8 @@ class merchandise_m_controller extends Controller
 
         try{
 
+            $judge = true;
+
             $merchandise_id = $request->merchandise_id;            
 
             $branch_number = is_null($request->branch_number) ? 0 : $request->branch_number;
@@ -220,36 +222,52 @@ class merchandise_m_controller extends Controller
 
                 // 新規登録、更新処理
                 //画像変更処理が行われた場合のみ行う
-                if ($image_change_flg == 1 && $request->hasFile('merchandise_image_input')) {
 
-                    $file = $request->file('merchandise_image_input');
+                if ($image_change_flg == 1) {
 
-                    if ($file) {
+                    if ($request->hasFile('merchandise_image_input')) {
 
-                        // Path削除処理
-                        Storage::disk('merchandise_image_public_path')->deleteDirectory($path);
-                        // Path作成処理
-                        Storage::disk('merchandise_image_public_path')->makeDirectory($path);     
-
-                        $extension = $file->getClientOriginalExtension();
-                        $file_name = $file->getClientOriginalName();
-                        $file_size = $file->getSize();
+                        $file = $request->file('merchandise_image_input');
     
-                        // 画像のリサイズ
-                        $resize_img = Image::make($file);
+                        if ($file) {
     
-                        // 画像の回転を考慮して調整
-                        $resize_img->orientate();
+                            // Path削除処理
+                            Storage::disk('merchandise_image_public_path')->deleteDirectory($path);
+                            // Path作成処理
+                            Storage::disk('merchandise_image_public_path')->makeDirectory($path);     
     
-                        $resize_img->resize(null, 500, function ($constraint) {
-                            $constraint->aspectRatio();
-                        });
+                            $extension = $file->getClientOriginalExtension();
+                            $file_name = $file->getClientOriginalName();
+                            $file_size = $file->getSize();
+        
+                            // 画像のリサイズ
+                            $resize_img = Image::make($file);
+        
+                            // 画像の回転を考慮して調整
+                            $resize_img->orientate();
+        
+                            $resize_img->resize(null, 500, function ($constraint) {
+                                $constraint->aspectRatio();
+                            });
+        
+                            // リサイズされた画像をエンコードして保存（新しいファイル名を指定）
+                            Storage::disk('merchandise_image_public_path')->put($path . '/' . $file_name, $resize_img->encode());
+                        }
     
-                        // リサイズされた画像をエンコードして保存（新しいファイル名を指定）
-                        Storage::disk('merchandise_image_public_path')->put($path . '/' . $file_name, $resize_img->encode());
-                    }
+                    }                    
 
-                }                           
+                }else{
+
+                    $result_array = array(
+                        "result" => "error",
+                        "message" => "画像更新処理でエラーが発生しました。【E001】",
+                    );
+
+                    return response()->json(['result_array' => $result_array]);
+
+
+                }
+                       
 
                 $staff_id = session()->get('staff_id');                
                 
