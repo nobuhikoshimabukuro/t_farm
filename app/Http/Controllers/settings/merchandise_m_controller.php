@@ -264,17 +264,18 @@ class merchandise_m_controller extends Controller
 
                         }
     
+                    }else{
+
+                        $result_array = array(
+                            "result" => "error",
+                            "message" => "画像更新処理でエラーが発生しました。【E002】",
+                        );
+    
+                        return response()->json(['result_array' => $result_array]);
+
+
                     }                    
-
-                }else{
-
-                    $result_array = array(
-                        "result" => "error",
-                        "message" => "画像更新処理でエラーが発生しました。【E002】",
-                    );
-
-                    return response()->json(['result_array' => $result_array]);
-
+               
 
                 }
                        
@@ -329,6 +330,11 @@ class merchandise_m_controller extends Controller
             );
         }
 
+        $result_array = array(
+            "result" => "error",
+            "message" => "画像更新処理でエラーが発生しました。【E002】",
+        );
+        
         return response()->json(['result_array' => $result_array]);
 
     }
