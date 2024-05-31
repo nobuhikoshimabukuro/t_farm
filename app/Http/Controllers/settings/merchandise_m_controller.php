@@ -240,7 +240,7 @@ class merchandise_m_controller extends Controller
 
                     if ($request->hasFile('merchandise_image_input')) {
 
-                $test = 7;
+                $test = 77;
 
                         $file = $request->file('merchandise_image_input');
     
@@ -278,7 +278,7 @@ class merchandise_m_controller extends Controller
 
                             $result_array = array(
                                 "result" => "error",
-                                "message" => "画像更新処理でエラーが発生しました。【E001】",
+                                "message" => "画像更新処理でエラーが発生しました。【" .$test  . "】",
                             );
         
                             return response()->json(['result_array' => $result_array]);
