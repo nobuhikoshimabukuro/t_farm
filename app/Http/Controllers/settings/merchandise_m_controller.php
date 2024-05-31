@@ -252,6 +252,16 @@ class merchandise_m_controller extends Controller
         
                             // リサイズされた画像をエンコードして保存（新しいファイル名を指定）
                             Storage::disk('merchandise_image_public_path')->put($path . '/' . $file_name, $resize_img->encode());
+                        }else{
+
+
+                            $result_array = array(
+                                "result" => "error",
+                                "message" => "画像更新処理でエラーが発生しました。【E001】",
+                            );
+        
+                            return response()->json(['result_array' => $result_array]);
+
                         }
     
                     }                    
@@ -260,7 +270,7 @@ class merchandise_m_controller extends Controller
 
                     $result_array = array(
                         "result" => "error",
-                        "message" => "画像更新処理でエラーが発生しました。【E001】",
+                        "message" => "画像更新処理でエラーが発生しました。【E002】",
                     );
 
                     return response()->json(['result_array' => $result_array]);
