@@ -162,7 +162,7 @@ class merchandise_m_controller extends Controller
 
         try{
 
-            $test = 1;
+            $process_index = 1;
     
             $judge = true;
 
@@ -178,7 +178,7 @@ class merchandise_m_controller extends Controller
             //フォルダ名生成
             if($branch_number == 0){
 
-                $test = 2;
+                $process_index = 2;
                 
                 //新規登録                
                 $branch_number = merchandise_image_t_model::withTrashed()->where('merchandise_id', $merchandise_id)->max('branch_number');
@@ -197,7 +197,7 @@ class merchandise_m_controller extends Controller
 
             }else{
 
-                $test = 3;
+                $process_index = 3;
 
                 //更新処理
                 //フォルダ名取得
@@ -211,11 +211,11 @@ class merchandise_m_controller extends Controller
 
             $path = "merchandise_id_" . $merchandise_id . "/" . $folder_name; 
 
-            $test = 4;
+            $process_index = 4;
 
             if($process_branch == 0){
             
-                $test = 5;
+                $process_index = 5;
 
                 // Path削除処理
                 Storage::disk('merchandise_image_public_path')->deleteDirectory($path);
@@ -228,25 +228,25 @@ class merchandise_m_controller extends Controller
 
             }else{
 
-                $test = 6;
+                $process_index = 6;
 
                 // 新規登録、更新処理
                 //画像変更処理が行われた場合のみ行う
 
                 if ($image_change_flg == 1) {
 
-                $test = 7;
+                    $process_index = 7;
 
 
                     if ($request->hasFile('merchandise_image_input')) {
 
-                $test = 77;
+                        $process_index = 8;
 
                         $file = $request->file('merchandise_image_input');
     
                         if ($file) {
                             
-                            $test = 8;
+                            $process_index = 9;
 
                             // Path削除処理
                             Storage::disk('merchandise_image_public_path')->deleteDirectory($path);
@@ -270,15 +270,15 @@ class merchandise_m_controller extends Controller
                             // リサイズされた画像をエンコードして保存（新しいファイル名を指定）
                             Storage::disk('merchandise_image_public_path')->put($path . '/' . $file_name, $resize_img->encode());
 
-                            $test = 100;
+                            $process_index = 10;
 
                         }else{
 
-                            $test = 9;
+                            $process_index = 11;
 
                             $result_array = array(
                                 "result" => "error",
-                                "message" => "画像更新処理でエラーが発生しました。【" .$test  . "】",
+                                "message" => "画像更新処理でエラーが発生しました。【E" .$process_index  . "】",
                             );
         
                             return response()->json(['result_array' => $result_array]);
@@ -287,11 +287,11 @@ class merchandise_m_controller extends Controller
     
                     }else{
 
-                        $test = 10;
+                        $process_index = 12;
 
                         $result_array = array(
                             "result" => "error",
-                            "message" => "画像更新処理でエラーが発生しました。【" .$test  . "】",
+                            "message" => "画像更新処理でエラーが発生しました。【E" .$process_index  . "】",
                         );
     
                         return response()->json(['result_array' => $result_array]);
@@ -303,7 +303,7 @@ class merchandise_m_controller extends Controller
                 }
                        
 
-                $test = 11;
+                $process_index = 13;
 
                 $staff_id = session()->get('staff_id');                
                 
@@ -312,7 +312,7 @@ class merchandise_m_controller extends Controller
                 ->where('branch_number', $branch_number)
                 ->first();
 
-                $test = 12;
+                $process_index = 14;
 
                 if(empty($table)){
 
@@ -337,15 +337,15 @@ class merchandise_m_controller extends Controller
                 // テーブルを保存
                 $table->save();       
                 
-                $test = 13;
+                $process_index = 15;
             }
          
             //処理成功時は再度画像データ情報を取得
             $merchandise_image_t_info = common::get_merchandise_image_t_info($merchandise_id , 2); 
 
             $result_array = array(
-                "result" => "sucess",
-                "message" => $test,
+                "result" => "success",
+                "message" => $process_index,
                 "merchandise_image_t_info" => $merchandise_image_t_info,
             );
 
