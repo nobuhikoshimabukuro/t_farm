@@ -162,6 +162,8 @@ class merchandise_m_controller extends Controller
 
         try{
 
+            $test = 1;
+    
             $judge = true;
 
             $merchandise_id = $request->merchandise_id;            
@@ -172,9 +174,11 @@ class merchandise_m_controller extends Controller
 
             $image_change_flg = $request->image_change_flg;           
 
-
+            
             //フォルダ名生成
             if($branch_number == 0){
+
+                $test = 2;
                 
                 //新規登録                
                 $branch_number = merchandise_image_t_model::withTrashed()->where('merchandise_id', $merchandise_id)->max('branch_number');
@@ -193,6 +197,8 @@ class merchandise_m_controller extends Controller
 
             }else{
 
+                $test = 3;
+
                 //更新処理
                 //フォルダ名取得
                 $folder_name = merchandise_image_t_model::where('merchandise_id', $merchandise_id)
@@ -205,10 +211,12 @@ class merchandise_m_controller extends Controller
 
             $path = "merchandise_id_" . $merchandise_id . "/" . $folder_name; 
 
-            
+            $test = 4;
 
             if($process_branch == 0){
             
+                $test = 5;
+
                 // Path削除処理
                 Storage::disk('merchandise_image_public_path')->deleteDirectory($path);
 
@@ -220,17 +228,26 @@ class merchandise_m_controller extends Controller
 
             }else{
 
+                $test = 6;
+
                 // 新規登録、更新処理
                 //画像変更処理が行われた場合のみ行う
 
                 if ($image_change_flg == 1) {
 
+                $test = 7;
+
+
                     if ($request->hasFile('merchandise_image_input')) {
+
+                $test = 7;
 
                         $file = $request->file('merchandise_image_input');
     
                         if ($file) {
-    
+                            
+                            $test = 8;
+
                             // Path削除処理
                             Storage::disk('merchandise_image_public_path')->deleteDirectory($path);
                             // Path作成処理
@@ -252,8 +269,12 @@ class merchandise_m_controller extends Controller
         
                             // リサイズされた画像をエンコードして保存（新しいファイル名を指定）
                             Storage::disk('merchandise_image_public_path')->put($path . '/' . $file_name, $resize_img->encode());
+
+                            $test = 100;
+
                         }else{
 
+                            $test = 9;
 
                             $result_array = array(
                                 "result" => "error",
@@ -265,6 +286,8 @@ class merchandise_m_controller extends Controller
                         }
     
                     }else{
+
+                        $test = 10;
 
                         $result_array = array(
                             "result" => "error",
@@ -280,12 +303,16 @@ class merchandise_m_controller extends Controller
                 }
                        
 
+                $test = 11;
+
                 $staff_id = session()->get('staff_id');                
                 
                 // merchandise_id と branch_number を使ってレコードを検索
                 $table = merchandise_image_t_model::where('merchandise_id', $request->merchandise_id)
                 ->where('branch_number', $branch_number)
                 ->first();
+
+                $test = 12;
 
                 if(empty($table)){
 
@@ -308,15 +335,17 @@ class merchandise_m_controller extends Controller
                 $table->updated_at = now();
 
                 // テーブルを保存
-                $table->save();                
+                $table->save();       
+                
+                $test = 13;
             }
          
             //処理成功時は再度画像データ情報を取得
             $merchandise_image_t_info = common::get_merchandise_image_t_info($merchandise_id , 2); 
 
             $result_array = array(
-                "result" => "success",
-                "message" => "",
+                "result" => "sucess",
+                "message" => $test,
                 "merchandise_image_t_info" => $merchandise_image_t_info,
             );
 
@@ -329,12 +358,7 @@ class merchandise_m_controller extends Controller
                 "message" => "画像更新処理でエラーが発生しました。【" . $error_message . "】",
             );
         }
-
-        $result_array = array(
-            "result" => "error",
-            "message" => "画像更新処理でエラーが発生しました。【E002】",
-        );
-        
+    
         return response()->json(['result_array' => $result_array]);
 
     }
