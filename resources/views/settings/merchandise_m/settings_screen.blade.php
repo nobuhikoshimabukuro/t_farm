@@ -27,15 +27,15 @@
     padding: 3px;
 }
 
-
-.merchandise-image-title{     
+.aaa{
     border: 1px solid;
-    border-bottom: none;
+}
+.merchandise-image-title{     
+    border-bottom: 1px solid;
 }
 .merchandise-image-area{
     aspect-ratio: 16 / 9;
-    padding: 3px;    
-    border: 1px solid;
+    padding: 3px;        
 }
 
 
@@ -635,7 +635,9 @@
 		$('.reset-button').blur();
                 
         document.getElementById('merchandise_image_input').value = '';        
-        $("#merchandise-image-preview-area").html(no_image_element);        
+        $("#merchandise-image-preview-area").html(no_image_element);
+
+        $("#image_change_flg").val(1);
 
     }
 
@@ -652,17 +654,23 @@
     
         var process_branch = $(this).data('processbranch');
         var image_change_flg = $("#image_change_flg").val();
-        
-        // 画像登録処理かつ画像変更時は画像設定されているかチェックする        
-        if(process_branch == 0 || image_change_flg == 1){
+        var branch_number = $("#branch_number").val();
 
-            // 画像選択チェック
-            var imageInput = $('#merchandise_image_input')[0];
-            if (imageInput.files.length === 0) {
-                alert("画像が設定されていません。");            
-                return;
+        if(process_branch != 0){
+
+            // 画像登録処理かつ画像変更時は画像設定されているかチェックする        
+            if(branch_number == 0 || image_change_flg == 1){
+
+                // 画像選択チェック
+                var imageInput = $('#merchandise_image_input')[0];
+                if (imageInput.files.length === 0) {
+                    alert("画像が設定されていません。");            
+                    return;
+                }
             }
+
         }
+        
 
         // ２重送信防止
         // 保存tを押したらdisabled, 10秒後にenable
@@ -673,7 +681,7 @@
         }, 3000);
 
         var merchandise_id = $("#merchandise_id").val();
-        var branch_number = $("#branch_number").val();
+        
 
         var title = $("#merchandise_image_title").val();
         var used_flg = $("#merchandise_image_used_flg").val();
@@ -779,14 +787,19 @@
             // 新しい要素を作成
             var newElement = `
                 <div class="merchandise-image-inner-area">
-                    <div class="merchandise-image-title ${add_class}">
-                        ${info.title}
-                        <br>
-                        ${add_string}
+
+                    <div class="aaa">
+                        
+                        <div class="merchandise-image-title ${add_class}">
+                            ${info.title}
+                            <br>
+                            ${add_string}
+                        </div>
+                        <div class="merchandise-image-area ${add_class}">
+                            <img src="${info.asset_path}" class='merchandise-image' alt="">
+                        </div>
                     </div>
-                    <div class="merchandise-image-area ${add_class}">
-                        <img src="${info.asset_path}" class='merchandise-image' alt="">
-                    </div>
+
                     <div class="text-end">
                         <button type="button" class="btn btn-outline-success mt-1 image_upload-modal-button" 
                             data-branchnumber="${info.branch_number}"
