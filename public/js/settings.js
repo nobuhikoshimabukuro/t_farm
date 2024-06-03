@@ -263,21 +263,12 @@ $('.page_transition-button').click(function(){
 
 });
 
-
 //モーダルを開いた時の共通イベント
-$('.modal').on('show.bs.modal',function(e){
-  
-  setTimeout(function() {
-      $('body').css('overflow-y', 'hidden');
-  }, 500); // 500ミリ秒のディレイ
-
+$('.modal').on('show.bs.modal',function(e){  
+  $('body').css('overflow-y', 'none');
 });
 
 //モーダルを閉じた時の共通イベント
 $('.modal').on('hidden.bs.modal', function() {
-
-  setTimeout(function() {
-    $('body').css('overflow-y', 'auto');
-  }, 500); // 500ミリ秒のディレイ
-
+  $('body').css('overflow-y', 'auto');
 });

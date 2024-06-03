@@ -378,10 +378,7 @@
                 </div>
             </form>
 
-            <div class="modal-footer">         
-
-                
-
+            <div class="modal-footer">
                 <div class="col-12 m-0 p-0 text-end">
                     <button type="button" class="btn btn-success image_info_change-button" data-processbranch="1">登録</button>
                     <button type="button" class="btn btn-danger image_info_change-button" data-processbranch="0">削除</button>                    
@@ -701,6 +698,8 @@
         //マウスカーソルを砂時計に
         document.body.style.cursor = 'wait';
 
+        start_processing("#image_upload-modal");
+
         $.ajax({
             url: f.prop('action'),
             type: f.prop('method'),
@@ -727,12 +726,14 @@
                                         
                     document.body.style.cursor = 'auto';
 
+                    end_processing();
                     $("#image_upload-modal").modal('hide');
 
                   
                 }else{
 
                                 
+                    end_processing();
                     //{{-- ボタン有効 --}}
                     $('.image_info_change-button').prop("disabled", false);                    
                     //{{-- マウスカーソルを通常に --}}                    
@@ -756,6 +757,7 @@
             // 送信失敗
             .fail(function (data, textStatus, errorThrown) {
                 
+                end_processing();
             
                 //{{-- ボタン有効 --}}
                 $('.image_info_change-button').prop("disabled", false);
@@ -765,6 +767,7 @@
                 var error_list = '';
                 error_list += '<li>データ登録処理でエラーが発生しました</li>';          
                 
+                alert("データ登録処理でエラーが発生しました");
 
             });
     });
@@ -866,6 +869,7 @@
 
         //マウスカーソルを砂時計に
         document.body.style.cursor = 'wait';
+        start_processing("#main");
 
         $.ajax({
             url: f.prop('action'), // 送信先
@@ -876,6 +880,8 @@
             // 送信成功
             .done(function (data, textStatus, jqXHR) {
                 
+                end_processing();
+
                 var result_array = data.result_array;
 
                 var result = result_array["result"];
@@ -905,6 +911,7 @@
             // 送信失敗
             .fail(function (data, textStatus, errorThrown) {
                 
+                end_processing();
             
                 //{{-- ボタン有効 --}}
                 $('#save-button').prop("disabled", false);

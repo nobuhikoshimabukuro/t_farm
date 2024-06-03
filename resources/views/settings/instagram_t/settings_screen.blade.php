@@ -187,7 +187,7 @@
             // rowsの値を適切な値に変更
             document.getElementById("embedded_characters").rows = 15;
         }else{
-            document.getElementById("embedded_characters").rows = 25;
+            document.getElementById("embedded_characters").rows = 20;
 
         }    
     }
