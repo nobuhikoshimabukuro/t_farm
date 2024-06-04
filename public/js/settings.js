@@ -214,13 +214,7 @@ function set_sales_flg(sales_flg){
 }
 
 
-//画面遷移ボタン別タブ
-$(document).on("click", ".page-transition-button", function (e) {
 
-  var url = $(this).data('url');
-  window.open(url, '_blank');
-
-});
 
 // クリアボタンがクリックされたら
 $('#clear-button').click(function(){
@@ -243,7 +237,7 @@ $('#clear-button').click(function(){
 
 
 // 戻るボタンがクリックされたら
-$('.page_transition-button').click(function(){
+$('.page-back-button').click(function(){
 
   var process_branch = $(this).data('processbranch');
   var url = $(this).data('url');

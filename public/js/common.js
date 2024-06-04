@@ -64,3 +64,11 @@ function end_processing(){
 
 }
 
+
+//画面遷移ボタン別タブ
+$(document).on("click", ".page-transition-button", function (e) {
+
+  var url = $(this).data('url');
+  window.open(url, '_blank');
+
+});

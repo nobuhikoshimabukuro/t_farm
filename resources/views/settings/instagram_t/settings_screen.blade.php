@@ -35,7 +35,7 @@
                             <td class="text-end">
 
                                 <button type="button" id="" 
-                                class="btn btn-outline-secondary page_transition-button"
+                                class="btn btn-outline-secondary page-back-button"
                                 data-processbranch="1"
                                 data-url="{{ route('settings.instagram_t.index') }}"
                                 >一覧に戻る</button>
