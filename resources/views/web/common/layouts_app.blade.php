@@ -167,6 +167,7 @@
                 <div class="">
                     <a class="" href="{{ route('web.index') }}">
                         <img id="" src="{{ asset('img/logo/tf_logo.png') }}" class="tf_logo" alt="tf_logo">
+                        {{-- <img id="" src="{{ asset('img/logo/kukuna.png') }}" class="tf_logo" alt="logo"> --}}
                     </a>
                 </div>
             
@@ -228,6 +229,7 @@
              <div class="">
                 <a class="p-0 m-0" href="{{ route('web.index') }}">
                     <img id="" src="{{ asset('img/logo/tf_logo.png') }}" class="tf_logo" alt="tf_logo">
+                    {{-- <img id="" src="{{ asset('img/logo/kukuna.png') }}" class="tf_logo" alt="logo"> --}}
                 </a>
             </div>
             <!--△△ヘッダーロゴ△△-->
