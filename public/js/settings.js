@@ -257,12 +257,3 @@ $('.page-back-button').click(function(){
 
 });
 
-//モーダルを開いた時の共通イベント
-$('.modal').on('show.bs.modal',function(e){  
-  $('body').css('overflow-y', 'none');
-});
-
-//モーダルを閉じた時の共通イベント
-$('.modal').on('hidden.bs.modal', function() {
-  $('body').css('overflow-y', 'auto');
-});

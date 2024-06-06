@@ -41,13 +41,16 @@ Route::get('settings/system_check', [settings_controller::class, 'system_check']
 Route::get('settings/merchandise_m/index', [merchandise_m_controller::class, 'index'])->name('settings.merchandise_m.index');
 Route::get('settings/merchandise_m/settings_screen', [merchandise_m_controller::class, 'settings_screen'])->name('settings.merchandise_m.settings_screen');
 Route::post('settings/merchandise_m/save', [merchandise_m_controller::class, 'save'])->name('settings.merchandise_m.save');
+Route::post('settings/merchandise_m/delete', [merchandise_m_controller::class, 'delete'])->name('settings.merchandise_m.delete');
 Route::post('settings/merchandise_m/image_upload', [merchandise_m_controller::class, 'image_upload'])->name('settings.merchandise_m.image_upload');
 
 Route::get('settings/question_m/index', [question_m_controller::class, 'index'])->name('settings.question_m.index');
 Route::get('settings/question_m/settings_screen', [question_m_controller::class, 'settings_screen'])->name('settings.question_m.settings_screen');
 Route::post('settings/question_m/save', [question_m_controller::class, 'save'])->name('settings.question_m.save');
+Route::post('settings/question_m/delete', [question_m_controller::class, 'delete'])->name('settings.question_m.delete');
 
 Route::get('settings/instagram_t/index', [instagram_t_controller::class, 'index'])->name('settings.instagram_t.index');
 Route::get('settings/instagram_t/settings_screen', [instagram_t_controller::class, 'settings_screen'])->name('settings.instagram_t.settings_screen');
 Route::get('settings/instagram_t/instagram_confirmation', [instagram_t_controller::class, 'instagram_confirmation'])->name('settings.instagram_t.instagram_confirmation');
 Route::post('settings/instagram_t/save', [instagram_t_controller::class, 'save'])->name('settings.instagram_t.save');
+Route::post('settings/instagram_t/delete', [instagram_t_controller::class, 'delete'])->name('settings.instagram_t.delete');

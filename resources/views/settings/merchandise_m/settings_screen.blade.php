@@ -740,8 +740,7 @@
                     document.body.style.cursor = 'auto';
 
                     var message = result_array["message"];
-
-                    
+                  
 
                     //{{-- アラートメッセージ表示 --}}
                     var error_list = '';

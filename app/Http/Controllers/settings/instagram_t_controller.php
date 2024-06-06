@@ -147,4 +147,51 @@ class instagram_t_controller extends Controller
     }
 
 
+    function delete(Request $request)
+    {
+
+        try {
+
+            $table = instagram_t_model::find($request->instagram_id);
+
+            $staff_id = session()->get('staff_id');
+
+            if(empty($table)){
+
+                $result_array = array(
+                    "result" => "error",
+                    "message" => "削除するデータが存在しません。",
+                );
+
+            }else{
+
+                $table->deleted_by = $staff_id;        
+                $table->deleted_at = now();
+                
+                // テーブル更新
+                $table->save();
+    
+                $result_array = array(
+                    "result" => "success",
+                    "message" => "",
+                );
+
+            }
+
+
+        } catch (Exception $e) {            
+
+            $error_message = $e->getMessage();
+            $result_array = array(
+                "result" => "error",
+                "message" => "削除処理でエラーが発生しました。",
+            );
+
+        }
+
+        return response()->json(['result_array' => $result_array]);
+
+
+    }
+
 }
