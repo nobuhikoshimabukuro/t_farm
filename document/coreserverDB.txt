@@ -1,0 +1,4 @@
+Hostname:localhost
+Database:yuyucraft_tfarm
+ユーザー名：yuyucraft_tfarm
+パスワード：FYtcFUe4Ly8k6ATeDKcW"

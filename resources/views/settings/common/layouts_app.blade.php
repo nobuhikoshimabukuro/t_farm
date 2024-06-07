@@ -136,7 +136,7 @@
     </div>
 </div>
 
-<body>
+<body id="settings-body">
 
     @php
 
@@ -285,8 +285,10 @@
 <!--▽▽jQuery▽▽-->
 <script>
 
-    $(window).on('load', function (){       
-        end_loader();
+    $(function(){
+        setTimeout(function(){
+            end_loader();
+        }, 1000);
     });
 
 

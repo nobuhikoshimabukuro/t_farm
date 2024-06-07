@@ -1,18 +1,23 @@
 body{    
     /* background-color:rgb(255,255,224); */
     background-color:white;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     overflow-y: auto;
     overflow-x:auto;    
     height: 100%;
+    font-size: 14px;
   }
   
   .container{
-    margin-bottom: 5vh;
+    margin-bottom: 15vh;
+    padding-bottom: 10vh;
   }
   
 a{
     color: #333;
-    text-decoration: none;
+    text-decoration: none;    
   }
 
 
@@ -21,6 +26,11 @@ a{
     background: none;
     border: none;
     cursor: pointer;
+  }
+
+  .modal-footer{
+    margin-bottom: 5vh;
+    padding-bottom: 5vh;
   }
 
 /* 商品紹介ページ start */

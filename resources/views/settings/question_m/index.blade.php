@@ -37,7 +37,7 @@
                         $text_class = [];
                         $text_class []= $text_class_kinds[1];
                         $text_class []= $text_class_kinds[0];
-                        $text_class []= $text_class_kinds[0];
+                        $text_class []= $text_class_kinds[1];
                         $text_class []= $text_class_kinds[1];
                         $text_class []= $text_class_kinds[2];                        
                         $text_class_index = 0;
@@ -45,7 +45,7 @@
                     <tr>
                         <th class="{{$text_class[$text_class_index++]}}">ID</th>
                         <th class="{{$text_class[$text_class_index++]}}">Q&A</th>
-                        <th class="{{$text_class[$text_class_index++]}}">答え</th>
+                        <th class="{{$text_class[$text_class_index++]}}">表示状態</th>
                         <th class="{{$text_class[$text_class_index++]}}">並び順</th>                                        
                         <th class="{{$text_class[$text_class_index++]}}"></th>
                         
@@ -100,6 +100,7 @@
                    
                             <td class="{{$text_class[$text_class_index++]}}">
                                 <button class='btn btn-outline-success' type='button' onclick= "location.href='{{ route('settings.question_m.settings_screen' ,['question_id' =>$item->question_id]) }}'">修正</button>
+                                <button class='btn btn-danger delete-button ml-1' type='button' data-id="{{$item->question_id}}">削除</button>
                             </td>
                         
                         </tr>
@@ -119,12 +120,9 @@
 
 
 
-    
-   
-{{-- インスタグラム確認用モーダルの読み込み --}}
-@include('settings/instagram_t/instagram_modal')
 
-
+{{-- エラーメッセージモーダルの読み込み --}}
+@include('settings/common/error_message_modal')
 
 
 
@@ -135,7 +133,75 @@
 
 <script type="text/javascript">
 
-   
+
+$(document).on("click", ".delete-button", function (e) {
+
+    var question_id = $(this).data('id');
+
+    var message = "削除処理を実行しますか？";    
+
+
+    if(!confirm(message)){     
+        return false;
+    }
+
+    start_processing("#main");
+
+    // 送信先
+    var url = "{{ route('settings.question_m.delete') }}"
+
+    $.ajax({	
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: { 'question_id' : question_id },
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}            
+        })
+            // 送信成功
+            .done(function (data, textStatus, jqXHR) {
+                
+                end_processing();
+
+                var result_array = data.result_array;
+
+                var result = result_array["result"];                
+
+                if(result == 'success'){
+
+                    location.reload();
+
+                }else{       
+
+                    var message = result_array["message"];
+                    
+                    //{{-- エラーメッセージ表示 --}}
+                    var error_list = '';
+                    error_list += '<li>' + message + '</li>';  
+
+                    error_message_modal_show(error_list);
+                
+                }
+
+            
+            })
+
+            // 送信失敗
+            .fail(function (data, textStatus, errorThrown) {
+                                                
+                end_processing();    
+
+                //{{-- エラーメッセージ表示 --}}
+                var error_list = '';
+                error_list += '<li>削除処理でエラーが発生しました。</li>';  
+
+                error_message_modal_show(error_list);
+
+                        
+
+            });
+
+
+});
 
 </script>
 

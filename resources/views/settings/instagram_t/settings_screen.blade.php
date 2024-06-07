@@ -35,7 +35,7 @@
                             <td class="text-end">
 
                                 <button type="button" id="" 
-                                class="btn btn-outline-secondary page_transition-button"
+                                class="btn btn-outline-secondary page-back-button"
                                 data-processbranch="1"
                                 data-url="{{ route('settings.instagram_t.index') }}"
                                 >一覧に戻る</button>
@@ -123,12 +123,23 @@
 
                             <td>
 
+                                <div class="col-12 mb-2 p-0 text-end">
+                                    <button type="button" id="" class="btn btn-secondary page-transition-button"　
+                                    data-url="{{ env('instagram_url')}}"
+                                    >Instagram</button>
+    
+                                    <button type="button" id="" class="btn btn-secondary page-transition-button"　
+                                    data-url="https://embedsocial.jp/blog/how-to-embed-instagram-to-website/"
+                                    >参考サイト</button>
+
+                                </div>
+
                                 <textarea id="embedded_characters" name="embedded_characters" class="form-control col-md-3" rows="20" cols="40">{!!$instagram_t->embedded_characters!!}</textarea>                 
                                 
 
                                 <div class="col-12 mt-2 p-0 text-end">
                                     <button type="button" id="" class="btn btn-secondary reset-button">リセット</button>
-                                    <button type="button" id="" class="btn btn-dark instagram-load-button">埋め込み文字読込</button>                                    
+                                    <button type="button" id="" class="btn btn-dark instagram-load-button">埋め込み文字読込</button>
                                 </div>
 
                             </td>
@@ -187,7 +198,7 @@
             // rowsの値を適切な値に変更
             document.getElementById("embedded_characters").rows = 15;
         }else{
-            document.getElementById("embedded_characters").rows = 25;
+            document.getElementById("embedded_characters").rows = 20;
 
         }    
     }
@@ -290,6 +301,8 @@
         //マウスカーソルを砂時計に
         document.body.style.cursor = 'wait';
 
+        start_processing("#main");
+
         $.ajax({
             url: f.prop('action'), // 送信先
             type: f.prop('method'),
@@ -299,6 +312,8 @@
             // 送信成功
             .done(function (data, textStatus, jqXHR) {
                 
+                end_processing();
+
                 var result_array = data.result_array;
 
                 var result = result_array["result"];
@@ -334,6 +349,7 @@
             // 送信失敗
             .fail(function (data, textStatus, errorThrown) {
                 
+                end_processing();
             
                 //{{-- ボタン有効 --}}
                 $('#save-button').prop("disabled", false);

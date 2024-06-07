@@ -173,63 +173,16 @@
 
             @endforeach		
 
-            {{-- <details class="qa-007">
-                                
-                <summary>
-                    どのうように購入するのでしょうか？
-                </summary>
 
-                <p>
-                    このHPからのご購入はできません。                    
-                    大変ご不便をお掛け致しますが、BASEからのご購入をお願い致します。
-                    <br>
-                    参考:<a href="https://help.thebase.in/hc/ja/articles/115000085522-BASE" target="_blank">
-                        <span style="color: blue">BASEとは
-                        </span>
-                        </a>
-                    <br>
-                    たかすじファーム:<a href="{{ env('base_url')}}" target="_blank">
-                        <span style="color: blue">購入ページ
-                        </span>
-                        </a>
 
-                    
-                </p>
-
-            </details>
-            
-            <details class="qa-007">
-                                
-                <summary>
-                    沖縄県以外にも発送可能ですか？
-                </summary>
-
-                <p>
-                    日本国内であれば発送可能です。
-                    <br>                    
-                    （2023年8月時点）
-                    <br>
-                    ※離島や特殊配達地域等への発送ご希望の場合は、                    
-                    配達業者にご確認致しますので気軽にお問い合わせください。
-                    
-                    
-                </p>
-
-            </details>
-
-            <details class="qa-007">
-                                
-                <summary>
-                    農園見学等は行っていますか？
-                </summary>
-
-                <p>
-                    農園見学は行っておりません。
-                </p>
-                
-            </details> --}}
-
-        </div>
+            <p>
+                ご質問などがあればお気軽にご連絡ください。   
+                販売サイト（BASE）のお問い合わせページにて承っております。                
+                <button type="button" class="btn btn-outline-secondary page-transition-button"
+                    data-url="{{ env('base_inquiry_url')}}">お問い合わせページへ</button>
+            </p>
+         
+        </div>       
 
     </div>
 
@@ -238,7 +191,7 @@
 
 
 
-    <form action="{{ route('web.send_inquiry_mail_process') }}" id='send_mail_form' method="post" enctype="multipart/form-data">
+    {{-- <form action="{{ route('web.send_inquiry_mail_process') }}" id='send_mail_form' method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="merchandise-area row">            
@@ -324,11 +277,11 @@
         </div>
 
 
-    </form>
+    </form> --}}
     
 
     {{-- お問い合わせ開始時のモーダル --}}
-    <div class="modal fade" id="info_modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="info_modal_label" aria-hidden="true">
+    {{-- <div class="modal fade" id="info_modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="info_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-dialog-fluid">
             <div class="modal-content">
 
@@ -353,7 +306,7 @@
 
             </div>
         </div>
-    </div>
+    </div>  --}}
     
     
 </div>

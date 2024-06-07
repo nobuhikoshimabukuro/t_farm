@@ -50,7 +50,7 @@
 }
 
 .photo-select-area{   
-   overflow-x:scroll;     
+   overflow-x:auto;     
    /* overflow-x:none;     */
 }
 
@@ -122,7 +122,7 @@
 .merchandise-explanation{
   text-align: left;
   color: #3b2525;
-  font-size: 21px;
+  font-size: 1rem;
   padding: 1px;
 }
 
@@ -159,6 +159,7 @@
 
     .scroll-btn-area{
         display:none;
+        
     }    
 
     .arrow-area .arrow_logo{
@@ -175,10 +176,30 @@
     width: 4rem;
     font-size: 1rem;
     border: solid 1px blue;
-    background: white;
-    font-weight: bold;
+    background: white;    
     color: blue;
     border-radius: 5px;
+}
+
+.base_move{
+    text-align: center;
+    margin-left: 1rem;
+    padding: 3px;
+    width: 6rem;
+    font-size: 1rem;
+    border: solid 1px blue;
+    background: white;    
+    color: blue;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+
+.base_move:hover {    
+    cursor: pointer;
+    border: solid 1px rgb(2, 2, 136);
+    font-weight: bold;
+    background: blue;
+    color: white;
 }
 
 .sold_out{
@@ -187,8 +208,7 @@
     width: 4rem;
     font-size: 1rem;
     border: solid 1px red;
-    background: white;
-    font-weight: bold;
+    background: white;    
     color: red;
     border-radius: 5px;
 }
@@ -217,7 +237,8 @@
                 $merchandise_id = $info->merchandise_id;
                 $merchandise_name = $info->merchandise_name;
                 $merchandise_description = $info->merchandise_description;
-                $sales_url = $info->sales_url;
+                $price = $info->price;
+                $sales_url = $info->sales_url;                
                 $sales_flg = $info->sales_flg;
 
                 $merchandise_image_t = $info->merchandise_image_t;                
@@ -230,12 +251,14 @@
 
                 <div id="" class="merchandise-inner-area">                    
                         
-                    <div class="merchandise-name-area row m-0 p-0 text-center">                        
-                        <h3 class="merchandise-name">
+                    <div class="merchandise-name-area row m-1 p-0 text-center">                        
+                        <h4 class="merchandise-name">
                             {{$merchandise_name}}
-                        </h3>
+                        </h4>
+                    </div>    
 
-                        <div class="text-start">                        
+                    <div class="merchandise-info-area row m-1 p-0">                        
+                        <div class="col-7 text-start d-flex" >
                             @if($sales_flg == 0)
                                 <div class="sold_out">
                                     完売
@@ -243,10 +266,17 @@
                             @else
                                 <div class="sale">
                                     販売中
-                                </div>
+                                </div>                                
+                                <div class="base_move page-transition-button" data-url="{{$sales_url}}">
+                                    購入ページ
+                                </div>     
                             @endif
                         </div>
-                    </div>    
+
+                        <div class="col-5 text-end">                            
+                            ￥{{number_format($price)}}
+                        </div>
+                    </div> 
 
 
                     <div class="col-12 m-0 p-0">     
@@ -481,6 +511,13 @@
 
         }
 
+
+    });
+
+    $(document).on("click", ".page-transition-button", function (e) {
+
+        var url = $(this).data('url');
+        window.open(url, '_blank');
 
     });
 

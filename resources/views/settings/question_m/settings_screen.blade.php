@@ -35,7 +35,7 @@
                             <td class="text-end">
 
                                 <button type="button" id="" 
-                                class="btn btn-outline-secondary page_transition-button"
+                                class="btn btn-outline-secondary page-back-button"
                                 data-processbranch="1"
                                 data-url="{{ route('settings.question_m.index') }}"
                                 >一覧に戻る</button>
@@ -220,6 +220,8 @@
         //マウスカーソルを砂時計に
         document.body.style.cursor = 'wait';
 
+        start_processing("#main");
+
         $.ajax({
             url: f.prop('action'), // 送信先
             type: f.prop('method'),
@@ -229,6 +231,8 @@
             // 送信成功
             .done(function (data, textStatus, jqXHR) {
                 
+                end_processing();
+
                 var result_array = data.result_array;
 
                 var result = result_array["result"];
@@ -258,7 +262,8 @@
             })
             // 送信失敗
             .fail(function (data, textStatus, errorThrown) {
-                
+            
+                end_processing();
             
                 //{{-- ボタン有効 --}}
                 $('#save-button').prop("disabled", false);

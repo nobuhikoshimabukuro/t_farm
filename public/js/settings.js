@@ -96,21 +96,21 @@ function fullToHalf(input) {
 
 function end_loader() {
 
-    var elements = document.querySelectorAll('.loader-area');
-  
-    // 取得した要素を削除
-    elements.forEach(function(element) {
-      element.remove();
-    });
-  
-  
-    var elements = document.querySelectorAll('.loader');
-  
-    // 取得した要素を削除
-    elements.forEach(function(element) {
-      element.remove();
-    });
-  }
+  var elements = document.querySelectorAll('.loader-area');
+
+  // 取得した要素を削除
+  elements.forEach(function(element) {
+    element.remove();
+  });
+
+
+  var elements = document.querySelectorAll('.loader');
+
+  // 取得した要素を削除
+  elements.forEach(function(element) {
+    element.remove();
+  });
+}
   
   // 引数は操作制御したいセレクタ
   function start_processing(target){
@@ -180,6 +180,7 @@ function set_merchandise_image_used_flg(merchandise_image_used_flg){
         
 
   $('#display_order-area').removeClass('inoperable');
+  
   if(merchandise_image_used_flg == 0){
       $('#display_order-area').addClass('inoperable');
   }
@@ -213,13 +214,7 @@ function set_sales_flg(sales_flg){
 }
 
 
-//画面遷移ボタン別タブ
-$(document).on("click", ".page-transition-button", function (e) {
 
-  var url = $(this).data('url');
-  window.open(url, '_blank');
-
-});
 
 // クリアボタンがクリックされたら
 $('#clear-button').click(function(){
@@ -242,7 +237,7 @@ $('#clear-button').click(function(){
 
 
 // 戻るボタンがクリックされたら
-$('.page_transition-button').click(function(){
+$('.page-back-button').click(function(){
 
   var process_branch = $(this).data('processbranch');
   var url = $(this).data('url');
@@ -261,3 +256,4 @@ $('.page_transition-button').click(function(){
   window.location.href = url;
 
 });
+

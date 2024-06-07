@@ -27,15 +27,15 @@
     padding: 3px;
 }
 
-
-.merchandise-image-title{     
+.aaa{
     border: 1px solid;
-    border-bottom: none;
+}
+.merchandise-image-title{     
+    border-bottom: 1px solid;
 }
 .merchandise-image-area{
     aspect-ratio: 16 / 9;
-    padding: 3px;    
-    border: 1px solid;
+    padding: 3px;        
 }
 
 
@@ -45,7 +45,7 @@
 }
 
 .merchandise-image-preview-area{
-    aspect-ratio: 16 / 9;
+    /* aspect-ratio: 16 / 9; */
     padding: 3px;    
     border: 1px solid;
 }
@@ -98,7 +98,7 @@
                             <td class="text-end">
 
                                 <button type="button" id="" 
-                                class="btn btn-outline-secondary page_transition-button"
+                                class="btn btn-outline-secondary page-back-button"
                                 data-processbranch="1"
                                 data-url="{{ route('settings.merchandise_m.index') }}"
                                 >一覧に戻る</button>
@@ -243,7 +243,10 @@
 
             </div>
 
-            <div class="col-11 mt-1 p-0">
+            <div class="col-11 mt-2 p-0">
+                <h4>
+                    画像設定
+                </h4>
 
                 <div class="merchandise-image-outer-area">
                     {{-- jQueryで作成 --}}
@@ -277,7 +280,7 @@
             <input type="hidden" name="image_change_flg" id="image_change_flg" value="0">
 
             <div class="modal-header">               
-                <h5 class="modal-title" id=></h5>
+                <h5 class="modal-title" >商品画像登録</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>                
             <form action="{{ route('settings.merchandise_m.image_upload') }}" id='image_upload-form'method="post" enctype="multipart/form-data">
@@ -375,12 +378,8 @@
                 </div>
             </form>
 
-            <div class="modal-footer">         
-
-                <div class="col-6 m-0 p-0 text-start">                                
-                </div>
-
-                <div class="col-6 m-0 p-0 text-end">
+            <div class="modal-footer">
+                <div class="col-12 m-0 p-0 text-end">
                     <button type="button" class="btn btn-success image_info_change-button" data-processbranch="1">登録</button>
                     <button type="button" class="btn btn-danger image_info_change-button" data-processbranch="0">削除</button>                    
                     <button type="button" id="" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
@@ -480,9 +479,11 @@
 
         var branch_number = $(this).data('branchnumber');
 
-        $("#branch_number").val(branch_number);
+        
 
-        $("#image_delete-button").removeClass("d-none");
+        //削除ボタンを可視化
+        $('.image_info_change-button[data-processbranch="0"]').removeClass('d-none');
+        
 
         var title = "";
         var asset_path = "{{asset('img/no_image/no_image.jpeg')}}";
@@ -490,14 +491,15 @@
         var used_flg = 1;
 
         if(branch_number == 0){
-            //新規登録処理の為、削除ボタンを非表示            
-            $("#image_delete-button").addClass("d-none");
+            //新規登録処理の為、削除ボタンを不可視化
+            $('.image_info_change-button[data-processbranch="0"]').addClass('d-none');            
         }else{
 
             title = $(this).data('title');
             asset_path = $(this).data('assetpath');
             display_order = $(this).data('displayorder');
             used_flg = $(this).data('usedflg');
+
         }
 
 
@@ -516,8 +518,7 @@
         // #Previewの中に追加
         merchandise_image_area.appendChild(img);
 
-
-
+        $("#branch_number").val(branch_number);
         $("#merchandise_image_title").val(title);
         $("#merchandise_image_display_order").val(display_order);
         $("#merchandise_image_used_flg").val(used_flg);
@@ -631,7 +632,9 @@
 		$('.reset-button').blur();
                 
         document.getElementById('merchandise_image_input').value = '';        
-        $("#merchandise-image-preview-area").html(no_image_element);        
+        $("#merchandise-image-preview-area").html(no_image_element);
+
+        $("#image_change_flg").val(1);
 
     }
 
@@ -646,29 +649,41 @@
     // 画像更新関連button
     $('.image_info_change-button').click(function(){
     
+        var process_branch = $(this).data('processbranch');
+        var image_change_flg = $("#image_change_flg").val();
+        var branch_number = $("#branch_number").val();
+
+        if(process_branch != 0){
+
+            // 画像登録処理かつ画像変更時は画像設定されているかチェックする        
+            if(branch_number == 0 || image_change_flg == 1){
+
+                // 画像選択チェック
+                var imageInput = $('#merchandise_image_input')[0];
+                if (imageInput.files.length === 0) {
+                    alert("画像が設定されていません。");            
+                    return;
+                }
+            }
+
+        }
+        
+
         // ２重送信防止
         // 保存tを押したらdisabled, 10秒後にenable
         $(this).prop("disabled", true);
 
         setTimeout(function () {
-            $('.image_info_change-button').prop("disabled", false);
-            
+            $('.image_info_change-button').prop("disabled", false);            
         }, 3000);
 
-
-        var process_branch = $(this).data('processbranch');       
-
-        var image_change_flg = $("#image_change_flg").val();
-
         var merchandise_id = $("#merchandise_id").val();
-        var branch_number = $("#branch_number").val();
+        
 
         var title = $("#merchandise_image_title").val();
         var used_flg = $("#merchandise_image_used_flg").val();
         var display_order = $("#merchandise_image_display_order").val();
         
-        
-
         var form_data = new FormData($('#image_upload-form').get(0));
         form_data.append('merchandise_id', merchandise_id);
         form_data.append('branch_number', branch_number);
@@ -682,6 +697,8 @@
         let f = $('#image_upload-form');
         //マウスカーソルを砂時計に
         document.body.style.cursor = 'wait';
+
+        start_processing("#image_upload-modal");
 
         $.ajax({
             url: f.prop('action'),
@@ -709,23 +726,27 @@
                                         
                     document.body.style.cursor = 'auto';
 
+                    end_processing();
                     $("#image_upload-modal").modal('hide');
 
                   
                 }else{
 
                                 
+                    end_processing();
                     //{{-- ボタン有効 --}}
                     $('.image_info_change-button').prop("disabled", false);                    
                     //{{-- マウスカーソルを通常に --}}                    
                     document.body.style.cursor = 'auto';
 
                     var message = result_array["message"];
+                  
 
                     //{{-- アラートメッセージ表示 --}}
                     var error_list = '';
                     error_list += '<li>' + message + '</li>';                     
-                        
+                    
+                    alert(message);
                     
                 }
 
@@ -735,6 +756,7 @@
             // 送信失敗
             .fail(function (data, textStatus, errorThrown) {
                 
+                end_processing();
             
                 //{{-- ボタン有効 --}}
                 $('.image_info_change-button').prop("disabled", false);
@@ -744,6 +766,7 @@
                 var error_list = '';
                 error_list += '<li>データ登録処理でエラーが発生しました</li>';          
                 
+                alert("データ登録処理でエラーが発生しました");
 
             });
     });
@@ -766,14 +789,19 @@
             // 新しい要素を作成
             var newElement = `
                 <div class="merchandise-image-inner-area">
-                    <div class="merchandise-image-title ${add_class}">
-                        ${info.title}
-                        <br>
-                        ${add_string}
+
+                    <div class="aaa">
+                        
+                        <div class="merchandise-image-title ${add_class}">
+                            ${info.title}
+                            <br>
+                            ${add_string}
+                        </div>
+                        <div class="merchandise-image-area ${add_class}">
+                            <img src="${info.asset_path}" class='merchandise-image' alt="">
+                        </div>
                     </div>
-                    <div class="merchandise-image-area ${add_class}">
-                        <img src="${info.asset_path}" class='merchandise-image' alt="">
-                    </div>
+
                     <div class="text-end">
                         <button type="button" class="btn btn-outline-success mt-1 image_upload-modal-button" 
                             data-branchnumber="${info.branch_number}"
@@ -840,6 +868,7 @@
 
         //マウスカーソルを砂時計に
         document.body.style.cursor = 'wait';
+        start_processing("#main");
 
         $.ajax({
             url: f.prop('action'), // 送信先
@@ -850,6 +879,8 @@
             // 送信成功
             .done(function (data, textStatus, jqXHR) {
                 
+                end_processing();
+
                 var result_array = data.result_array;
 
                 var result = result_array["result"];
@@ -879,6 +910,7 @@
             // 送信失敗
             .fail(function (data, textStatus, errorThrown) {
                 
+                end_processing();
             
                 //{{-- ボタン有効 --}}
                 $('#save-button').prop("disabled", false);
