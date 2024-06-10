@@ -3,6 +3,7 @@ Git Hub
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 shimabukuronobuhiko@gmail.com
 Nobu6856
+Nobu9376856
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -56,36 +57,21 @@ VSCode	SSH
 -----------------------------------------------------------------------
 
 
-Host coreserver
-HostName v2006.coreserver.jp
-User sqdxoewv
-PasswordAuthentication no
-IdentityFile ~/.ssh/key_rsa.htm
-IdentitiesOnly yes
+Host kukuna
+    HostName v2010.coreserver.jp
+    User sqdxoewv
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/kukuna_rsa.htm
+    IdentitiesOnly yes
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SSH
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-パス：00310527
+パス：Kk19890923
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FTP（FFFTP）
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-《基本タブ》
-ホスト設定名：yuyucraft
-ホスト名（アドレス）：v2006.coreserver.jp
-ユーザー名：yuyucraft
-パスワード/パスフレーズ：wExGYCWSpcvj
-初期フォルダ：空白
-《暗号化タブ》
-FTPS(Explicit)で接続のみチェック
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 
@@ -123,7 +109,7 @@ SSH2ホスト名：v2010.coreserver.jp
 ユーザーID：sqdxoewv
 
 ※鍵ファイル認証にチェック
-パスフレーズ：03310527
+パスフレーズ：Kk19890923
 秘密鍵ファイル：ユーザーの直下→.sshの特定キー指定
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
