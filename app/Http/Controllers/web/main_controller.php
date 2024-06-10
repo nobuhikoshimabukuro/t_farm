@@ -181,6 +181,8 @@ class main_controller extends Controller
             }
         }
 
+        $Judge = true;
+        
         return $Judge;
     }
 

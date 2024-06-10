@@ -7,7 +7,7 @@
             'label' => '管理者',
             'route' => route('settings.menu'),
             'src' => asset('img/logo/0003.jpg'),
-            'display' => true,
+            'display' => false,
         ],
 
         [
