@@ -113,3 +113,67 @@ SSH2ホスト名：v2010.coreserver.jp
 秘密鍵ファイル：ユーザーの直下→.sshの特定キー指定
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+coreserver導入
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+home/ユーザーにcomposerフォルダを作成
+
+mkdir composer
+
+composerをダウンロードし、インストール
+
+/home/sqdxoewv/composer/composer.phar
+
+php /home/sqdxoewv/composer/composer.phar install
+
+
+
+git clone https://github.com/nobuhikoshimabukuro/t_farm.git
+
+php /home/sqdxoewv/composer/composer.phar install
+
+
+
+
+coreserver V2　導入
+
+①coreserver　ドメイン管理にドメイン追加
+
+②SSH接続
+
+③【domain】階層に移動
+
+④①で追加したドメインを確認
+
+⑤【domain】階層でgit clone
+コマンド：git clone https://github.com/nobuhikoshimabukuro/t_farm.git
+
+⑥pullしたフォルダ内で
+php /home/sqdxoewv/composer/composer.phar install
+
+
+⑦【domain】階層のprivate_htmlのシンボリックリンクの削除と再設定が必要
+7-1:cd /home/sqdxoewv/domains/kukuna-mango.com
+7-2:ls -l
+7-3:unlink /home/sqdxoewv/domains/kukuna-mango.com/private_html
+7-4:ln -s /home/sqdxoewv/domains/kukuna-mango.com/t_farm/public /home/sqdxoewv/domains/kukuna-mango.com/private_html
+
+⑧envファイルの作成
+
+・APP_KEY作成
+php artisan key:generate
+
+
+⑩DB作成
+・マイグレーション実行 既存Table削除し再作成後シードも実行
+php artisan migrate:fresh --database=mysql --seed
+
+
+⑪シンボリックリンクの設定
+cd /home/sqdxoewv/domains/kukuna-mango.com/gakupro
+php artisan storage:link
