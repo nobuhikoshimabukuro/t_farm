@@ -360,7 +360,7 @@
     $(function(){
         setTimeout(function(){
             end_loader();
-        }, 1000);
+        }, 500);
     });
 
     $('#hamburger').on('click', function(){

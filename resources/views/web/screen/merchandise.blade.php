@@ -213,6 +213,11 @@
     border-radius: 5px;
 }
 
+.price{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
 
 
 
@@ -273,8 +278,11 @@
                             @endif
                         </div>
 
-                        <div class="col-5 text-end">                            
-                            ￥{{number_format($price)}}
+                        <div class="col-5 text-end">
+                            <p class="price">
+                                ￥{{number_format($price)}}
+                            </p>
+                            
                         </div>
                     </div> 
 
