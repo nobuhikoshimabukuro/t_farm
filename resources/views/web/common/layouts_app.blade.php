@@ -151,6 +151,7 @@
             }
         }
 
+        $header_flg = true;
 
     @endphp
 
