@@ -294,7 +294,9 @@
           ご注文は簡単で、全国配送も承っております。ぜひこの機会に、当農園自慢のマンゴーをご堪能ください。
           <br>          
           <span class="emphasis item-flash">
-            2024年の収穫予定分の販売を開始しました。          
+            2024年分の販売予約を開始しました。
+            <br>
+            詳細はInstagramをチェックしてください。
           </span>
           <br>
           商品の詳細は<a href="{{ route('web.merchandise') }}" class="underline">商品紹介ページ</a>でご覧ください。          
