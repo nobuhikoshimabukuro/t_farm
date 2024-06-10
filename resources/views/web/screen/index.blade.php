@@ -295,13 +295,14 @@
           <br>          
           <span class="emphasis item-flash">
             2024年分の販売予約を開始しました。
-            <br>
+            
             詳細はInstagramをチェックしてください。
           </span>
           <br>
           商品の詳細は<a href="{{ route('web.merchandise') }}" class="underline">商品紹介ページ</a>でご覧ください。          
           <br>
           不定期ではございますが、<a href="{{env('instagram_url') }}" class="underline" target="_blank">Instagram</a>で沖縄や農園の最新情報を発信しております。
+          <br>
           ぜひチェックして、私たちの取り組みをフォローしてください。
         </p>
 
