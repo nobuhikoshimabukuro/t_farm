@@ -16,6 +16,7 @@
     border-radius: 5px;
     box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgba(0 0 0 / 5%);
     background-color: #f4ebf5;
+    font-size: 1.1rem;
 }
 
 .qa-007 summary {
@@ -173,14 +174,14 @@
 
             @endforeach		
 
+            
 
-
-            <p>
-                ご質問などがあればお気軽にご連絡ください。   
-                販売サイト（BASE）のお問い合わせページにて承っております。                
-                <button type="button" class="btn btn-outline-secondary page-transition-button"
-                    data-url="{{ env('base_inquiry_url')}}">お問い合わせページへ</button>
-            </p>
+            <div class="col-12 mt-1 p-0 text-start" style="font-size: 1.1rem;">                
+                <p>
+                    他にご質問などがあればお気軽にご連絡ください。   
+                    販売サイト（BASE）の<a href="{{ env('base_inquiry_url') }}" class="underline">お問い合わせページ</a>にて承っております。                    
+                </p>
+            </div>
          
         </div>       
 
