@@ -1,4 +1,35 @@
 
+
+function set_main_minheight() {
+
+  const header1 = document.querySelector('.header1');
+  const header2 = document.querySelector('.header2');
+  const footer = document.querySelector('footer');
+  const main = document.getElementById('main');
+
+  // ヘッダーとフッターの高さを取得
+  const header1Height = header1.offsetHeight;
+  const header2Height = header2.offsetHeight;        
+  const footerHeight = footer.offsetHeight;
+
+  // 画面の高さを取得
+  const windowHeight = window.innerHeight;
+
+
+
+  // メインコンテンツのmin-heightを計算して設定
+  const mainMinHeight = windowHeight - header1Height - header2Height - footerHeight - getHeightWithMargin(main);
+  main.style.minHeight = mainMinHeight + 'px';
+
+}
+
+function getHeightWithMargin(element) {
+      const styles = window.getComputedStyle(element);
+      const margin = parseFloat(styles['marginTop']) + parseFloat(styles['marginBottom']);
+      return Math.ceil(margin);
+}
+
+
   // 引数は操作制御したいセレクタ
   function start_loader(target){
 
@@ -12,22 +43,24 @@
   
   }
 
+
+
 function end_loader() {
 
-    var elements = document.querySelectorAll('.loader-area');
-  
-    // 取得した要素を削除
-    elements.forEach(function(element) {
-      element.remove();
-    });
-  
-  
-    var elements = document.querySelectorAll('.loader');
-  
-    // 取得した要素を削除
-    elements.forEach(function(element) {
-      element.remove();
-    });
+  var elements = document.querySelectorAll('.loader-area');
+
+  // 取得した要素を削除
+  elements.forEach(function(element) {
+    element.remove();
+  });
+
+
+  var elements = document.querySelectorAll('.loader');
+
+  // 取得した要素を削除
+  elements.forEach(function(element) {
+    element.remove();
+  });
 }
   
   // 引数は操作制御したいセレクタ

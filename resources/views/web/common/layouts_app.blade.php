@@ -1,39 +1,45 @@
 @php 
     $system_version = "?system_version=" . env('system_version');
 
+    $currentRouteName = Route::currentRouteName();
     $route_array = [
 
         [
             'label' => '管理者',
-            'route' => route('settings.menu'),
+            // 'route' => route('settings.menu'),
+            'route' => 'settings.menu',
             'src' => asset('img/logo/0003.jpg'),
             'display' => false,
         ],
 
         [
             'label' => 'TOP',
-            'route' => route('web.index'),
+            // 'route' => route('web.index'),
+            'route' => 'web.index',
             'src' => asset('img/logo/0003.jpg'),
             'display' => true,
         ],
 
         [
             'label' => '商品紹介',
-            'route' => route('web.merchandise'),
+            // 'route' => route('web.merchandise'),
+            'route' => 'web.merchandise',
             'src' => asset('img/logo/0003.jpg'),
             'display' => true,
         ],
 
         [
             'label' => 'お問い合わせ',
-            'route' => route('web.inquiry'),
+            // 'route' => route('web.inquiry'),
+            'route' => 'web.inquiry',
             'src' => asset('img/logo/0003.jpg'),
             'display' => true,
         ],
 
         [
             'label' => '農園情報',
-            'route' => route('web.farminfo'),
+            // 'route' => route('web.farminfo'),
+            'route' => 'web.farminfo',
             'src' => asset('img/logo/0003.jpg'),
             'display' => false,
         ]
@@ -48,7 +54,9 @@
     <link href="{{ asset('css/all.css') . $system_version}}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') . $system_version }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') . $system_version }}" rel="stylesheet">
-    <link href="{{ asset('css/header.css') . $system_version }}" rel="stylesheet">    
+    {{-- <link href="{{ asset('css/header.css') . $system_version }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/header2.css') . $system_version }}" rel="stylesheet">
+    <link href="{{ asset('css/footer.css') . $system_version }}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,6 +134,36 @@
 }
 
 
+header {
+
+    /* background: url("{{ asset('img/logo/footer.jpg') }}") center center; */
+    /* background: url("{{ asset('img/logo/header.jpg') }}") no-repeat center center; */
+
+}
+.footer {
+  
+  /* background: url("{{ asset('img/logo/instagram.png') }}") no-repeat center center; */
+  /* background-size: cover; */
+  /* background: url("{{ asset('img/logo/instagram.png') }}") center center; */
+  background: url("{{ asset('img/logo/footer.jpg') }}") center center;
+  
+  text-align: center;            
+  color: white;            
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer-content {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+}
+
+
+.active{
+    font-size: 1.1rem;
+    color: #0a58ca;
+}
+
+
 
 </style>
 
@@ -158,35 +196,24 @@
     @if($header_flg)
 
     {{-- PC --}}
-    <div class="d-none d-md-block w-100">
-
-        <!--ヘッダー-->
+    {{-- <div class="d-none d-md-block w-100">
+       
         <header class="m-0 p-0">
 
             
-            <!--▽▽ヘッダーロゴ▽▽-->
+
                 <div class="">
                     <a class="" href="{{ route('web.index') }}">
                         <img id="" src="{{ asset('img/logo/tf_logo.png') }}" class="tf_logo" alt="tf_logo">
-                        {{-- <img id="" src="{{ asset('img/logo/kukuna.png') }}" class="tf_logo" alt="logo"> --}}
                     </a>
                 </div>
-            
-            <!--△△ヘッダーロゴ△△-->
-
-
+                       
             
                 <h3 class="m-0 p-0" style="line-height: 60px;">
                     たかすじファーム
-                </h3>              
-            
-
-
-            <!--▽▽ヘッダーリスト▽▽-->
-            
-                <nav class="pc">  <!--pcクラスを追記-->
+                </h3>
+                <nav class="pc">
                     <ul>
-
                         @foreach ($route_array as $info)
                             @if($info["display"])
                                 <li>
@@ -195,10 +222,7 @@
                                     </a>
                                 </li>
                             @endif
-                        @endforeach
-
-                       
-                        
+                        @endforeach                        
                         <li>
                             <a class="" href="{{ env('instagram_url')}}" target="_blank">
                                 <img src="{{ asset('img/logo/instagram.png') }}" class="instagram_logo" alt="instagram">
@@ -212,11 +236,65 @@
 
 
                     </ul>
-                </nav>
-            
-            <!--△△ヘッダーリスト△△-->
+                </nav>            
             
         </header>
+
+    </div> --}}
+
+
+    <div class="d-none d-md-block w-100">
+       
+        <header class="m-0 p-0 header1">
+
+            
+
+            <div class="">
+                <a class="" href="{{ route('web.index') }}">
+                    <img id="" src="{{ asset('img/logo/tf_logo.png') }}" class="tf_logo" alt="tf_logo">
+                </a>
+            </div>
+                   
+        
+            <h3 class="m-0 p-0" style="line-height: 60px;">
+                たかすじファーム
+            </h3>
+            <nav class="pc">
+                <ul>
+                    @foreach ($route_array as $info)
+                        @if($info["display"])
+
+                            @php
+                                $add_class = "";
+
+                                if($info['route'] == $currentRouteName){
+                                    $add_class = "active";
+                                }
+                            @endphp
+
+                            <li class="">
+                                <a class="{{$add_class}}" href="{{route($info['route'])}}">                                              
+                                    {{$info['label']}}                                                     
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach                        
+                    <li>
+                        <a class="" href="{{ env('instagram_url')}}" target="_blank">
+                            <img src="{{ asset('img/logo/instagram.png') }}" class="instagram_logo" alt="instagram">
+                        </a>
+                    </li>  
+
+
+                    <button class='cart_logo_btn' data-bs-toggle='modal' data-bs-target='#purchase_modal'>
+                        <img src="{{ asset('img/logo/cart.png') }}" class='cart_logo' alt="cart_logo">
+                    </button>     
+
+
+                </ul>
+            </nav>            
+        
+    </header>
 
     </div>
 
@@ -224,7 +302,7 @@
     {{-- スマホ --}}
     <div class="d-block d-md-none w-100">
 
-        <header class="p-0 m-0">
+        <header class="p-0 m-0 header2">
 
              <!--▽▽ヘッダーロゴ▽▽-->
              <div class="">
@@ -258,16 +336,22 @@
 
                     @foreach ($route_array as $info)
                         @if($info["display"])
+
+                            @php
+                                $add_class = "";
+
+                                if($info['route'] == $currentRouteName){
+                                    $add_class = "active";
+                                }
+                            @endphp
                             <li>
-                                <a href="{{$info['route']}}">         
+                                <a class="{{$add_class}}" href="{{route($info['route'])}}">        
                                     <img id="" src="{{$info['src']}}" class="merchandise_logo" alt="tf_logo">                       
                                     {{$info['label']}}
                                 </a>
                             </li>
                         @endif
-                    @endforeach
-
-                    
+                    @endforeach                    
                     
                     <li>
                         <a class="" href="{{ env('instagram_url')}}" target="_blank">                            
@@ -348,6 +432,13 @@
 
 
 
+<footer class="footer">
+        <div class="footer-content">
+        &copy; KUKUNA-MANGO. All rights reserved.
+    </div>
+            
+</footer>
+
 <script src="{{ asset('js/bootstrap.js') . $system_version}}"></script>
 <script src="{{ asset('js/jquery-3.6.0.min.js') . $system_version}}"></script>
 <script src="{{ asset('js/app.js') . $system_version}}"></script>
@@ -359,10 +450,20 @@
 <script>
 
     $(function(){
+
         setTimeout(function(){
             end_loader();
         }, 500);
+
+        set_main_minheight();
     });
+
+    
+    // 画面幅が変更されたときに実行させたい処理内容
+    $(window).resize(function(){                 
+        set_main_minheight();
+    });
+
 
     $('#hamburger').on('click', function(){
         $('.icon').toggleClass('close');
@@ -384,6 +485,7 @@
 
 
 @yield('pagejs')
+
 
 </body>
 

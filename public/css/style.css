@@ -9,6 +9,10 @@ body{
     height: 100%;
     font-size: 14px;
   }
+
+  #main{
+    min-height: 100vh;
+  }
   
   .container{
     margin-bottom: 15vh;
