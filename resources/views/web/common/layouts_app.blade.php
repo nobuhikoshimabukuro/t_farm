@@ -57,6 +57,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="{{ asset('css/all.css') . $system_version}}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') . $system_version }}" rel="stylesheet">
+    <link href="{{ asset('css/swiper-bundle.min.css') . $system_version }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') . $system_version }}" rel="stylesheet">
     {{-- <link href="{{ asset('css/header.css') . $system_version }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/header2.css') . $system_version }}" rel="stylesheet">
@@ -467,6 +468,7 @@ header {
 </footer>
 
 <script src="{{ asset('js/bootstrap.js') . $system_version}}"></script>
+<script src="{{ asset('js/swiper-bundle.min.js') . $system_version}}"></script>
 <script src="{{ asset('js/jquery-3.6.0.min.js') . $system_version}}"></script>
 <script src="{{ asset('js/app.js') . $system_version}}"></script>
 <script src="{{ asset('js/common.js') . $system_version}}"></script>

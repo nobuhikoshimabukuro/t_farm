@@ -36,7 +36,12 @@ class main_controller extends Controller
         ->orderBy('display_order', 'asc')
         ->get();
 
-        return view('web/screen/index', compact('instagram_t'));
+        if(env('APP_DEBUG')){
+            return view('web/screen/index_test', compact('instagram_t'));            
+        }else{
+            return view('web/screen/index', compact('instagram_t'));
+        }
+        
      
     }
 

@@ -1,7 +1,7 @@
 @extends('web.common.layouts_app')
 
 @section('pagehead')
-@section('title', 'ククナマンゴー')  
+@section('title', 'ククナマンゴーテスト')  
 
 @endsection
 @section('content')
