@@ -1,6 +1,10 @@
 @php 
     $system_version = "?system_version=" . env('system_version');
 
+
+    $menu_select_image = asset('img/logo/menu.png');
+
+
     $currentRouteName = Route::currentRouteName();
     $route_array = [
 
@@ -117,15 +121,15 @@
 }
 
 #purchase_modal .modal-header{
-    background-color: rgb(241, 249, 238)
+    background-color: white;
 }
 
 #purchase_modal .modal-body{
-    background-color: rgb(240, 241, 237)
+    background-color: white;
 }
 
 #purchase_modal .modal-footer{
-    background-color: rgb(241, 249, 238)
+    background-color: white;
 }
 
 
@@ -151,6 +155,12 @@ header {
   color: white;            
   width: 100%;
   box-sizing: border-box;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;    
+  text-align: center;
 }
 .footer-content {
   background-color: rgba(0, 0, 0, 0.5); 
@@ -164,7 +174,11 @@ header {
 }
 
 
-
+.menu_select{
+    height: 1.1rem;
+    width: 1.1rem;
+    margin-bottom: 3px;
+}
 </style>
 
 
@@ -257,7 +271,7 @@ header {
                    
         
             <h3 class="m-0 p-0" style="line-height: 60px;">
-                たかすじファーム
+                KUKUNA-MANGO
             </h3>
             <nav class="pc">
                 <ul>
@@ -273,7 +287,10 @@ header {
                             @endphp
 
                             <li class="">
-                                <a class="{{$add_class}}" href="{{route($info['route'])}}">                                              
+                                <a class="{{$add_class}}" href="{{route($info['route'])}}">  
+                                    @if($add_class != "")
+                                        <img id="" src="{{$menu_select_image}}" class="menu_select" alt="mango">                                              
+                                    @endif
                                     {{$info['label']}}                                                     
                                 </a>
                             </li>
@@ -318,7 +335,9 @@ header {
                 <img src="{{ asset('img/logo/cart.png') }}" class='cart_logo' alt="cart_logo">
             </button>     
             <!--△△カートロゴ△△-->
-            
+
+                       
+
             <!--▽▽ハンバーガーメニュー▽▽-->
             <div id="hamburger">                       
                 <div class="icon">
@@ -348,6 +367,10 @@ header {
                                 <a class="{{$add_class}}" href="{{route($info['route'])}}">        
                                     <img id="" src="{{$info['src']}}" class="merchandise_logo" alt="tf_logo">                       
                                     {{$info['label']}}
+
+                                    @if($add_class != "")
+                                        <img id="" src="{{$menu_select_image}}" class="menu_select" alt="mango">                                              
+                                    @endif
                                 </a>
                             </li>
                         @endif
@@ -359,7 +382,8 @@ header {
                             instagram
                         </a>
                     </li>
-                   
+
+                                     
                     
                 </ul>
             </nav>
@@ -390,6 +414,8 @@ header {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                
+   
+
                 <div class="modal-body">
 
                     <p>
@@ -401,6 +427,7 @@ header {
                             たかすじファーム購入ページ
                         </a>
                         
+                        <br>
                         <br>
                         <a href="https://help.thebase.in/hc/ja/articles/115000085522-BASE" target="_blank" class="underline">
                             BASEとは                                
@@ -455,13 +482,13 @@ header {
             end_loader();
         }, 500);
 
-        set_main_minheight();
+        // set_main_minheight();
     });
 
     
     // 画面幅が変更されたときに実行させたい処理内容
     $(window).resize(function(){                 
-        set_main_minheight();
+        // set_main_minheight();
     });
 
 

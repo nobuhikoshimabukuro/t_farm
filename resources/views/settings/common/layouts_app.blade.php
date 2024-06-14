@@ -110,15 +110,15 @@
 }
 
 #purchase_modal .modal-header{
-    background-color: rgb(241, 249, 238)
+    background-color: white;
 }
 
 #purchase_modal .modal-body{
-    background-color: rgb(240, 241, 237)
+    background-color: white;
 }
 
 #purchase_modal .modal-footer{
-    background-color: rgb(241, 249, 238)
+    background-color: white;
 }
 
 
