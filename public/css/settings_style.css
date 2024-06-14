@@ -513,3 +513,8 @@
       border-color: transparent;
   }
 } 
+
+.modal-footer{
+  margin-bottom: 5vh;
+  padding-bottom: 5vh;
+}
