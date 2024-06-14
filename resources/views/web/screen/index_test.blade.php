@@ -199,29 +199,139 @@
 
 
 
+
+/* 参考サイト
+https://junpei-sugiyama.com/swiper-summary/
+*/
+.swiper {
+  height: 67vw;
+}
+
+.swiper-slide {
+  overflow: hidden;
+}
+.swiper-slide img {
+  height: auto;
+  width: 100%;
+}
+.swiper-text {
+  color: #fff;
+  left: 5%;
+  position: absolute;
+  text-shadow: 1px 1px 2px #333;
+  top: 50%;
+  width: 60%;
+}
+.swiper-title {
+  font-size: clamp(16px, 3vw, 50px);
+  font-weight: 700;
+}
+.swiper-desc {
+  font-size: clamp(12px, 2vw, 30px);
+  line-height: 1.5;
+  margin-top: 3%;
+}
 </style>
 
-  {{-- スマホ --}}
-  {{-- <div class="d-block d-md-none w-100">
-    <div class="row p-0 m-0">
-      <img src="{{ asset('img/top/0001.jpg') }}" class="p-0 m-0">
-    </div>   
-  </div>    --}}
-
-  {{-- PC --}}
-  {{-- <div class="d-none d-md-block w-100">
-    <div class="row p-0 m-0">
-      <img src="{{ asset('img/top/0001.jpg') }}" class="p-0 m-0">
-    </div>   
-  </div>    --}}
-
-
-
-  
-
-  
-
-    
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="swiper-img" data-swiper-parallax-x="90%">
+        <img
+          src="https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog01.jpg"
+          alt=""
+        />
+      </div>
+      <div class="swiper-text">
+        <h3 class="swiper-title">チワワ</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-img" data-swiper-parallax-x="90%">
+        <img
+          src="https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog02.jpg"
+          alt=""
+        />
+      </div>
+      <div class="swiper-text">
+        <h3 class="swiper-title">ポメラニアン&パピヨン</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-img" data-swiper-parallax-x="90%">
+        <img
+          src="https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog03.jpg"
+          alt=""
+        />
+      </div>
+      <div class="swiper-text">
+        <h3 class="swiper-title">パピヨン</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-img" data-swiper-parallax-x="90%">
+        <img
+          src="https://junpei-sugiyama.com/wp-content/uploads/2021/08/dog04.jpg"
+          alt=""
+        />
+      </div>
+      <div class="swiper-text">
+        <h3 class="swiper-title">フレンチブルドッグ</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-img" data-swiper-parallax-x="90%">
+        <img
+          src="https://junpei-sugiyama.com/wp-content/uploads/2021/08/dog05.jpg"
+          alt=""
+        />
+      </div>
+      <div class="swiper-text">
+        <h3 class="swiper-title">チワワ</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-img" data-swiper-parallax-x="90%">
+        <img
+          src="https://junpei-sugiyama.com/wp-content/uploads/2021/08/dog06.jpg"
+          alt=""
+        />
+      </div>
+      <div class="swiper-text">
+        <h3 class="swiper-title">トイプードル</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- ページネーション -->
+  <div class="swiper-pagination"></div>
+  <!-- 前後の矢印 -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
 
 
 
@@ -368,6 +478,30 @@
 @section('pagejs')
 
 <script type="text/javascript">
+
+
+const swiper = new Swiper(".swiper", {
+  loop: true, // ループ
+  speed: 1500, // 少しゆっくり(デフォルトは300)
+  slidesPerView: 1.3, // 一度に表示する枚数
+  spaceBetween: 30, // スライド間の距離
+  centeredSlides: true, // アクティブなスライドを中央にする
+  autoplay: {
+    // 自動再生
+    delay: 8000, // 1秒後に次のスライド
+    disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+  },
+  // ページネーション
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  // 前後の矢印
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
 </script>
 
