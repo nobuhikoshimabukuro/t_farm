@@ -179,7 +179,7 @@
             <div class="col-12 mt-1 p-0 text-start" style="font-size: 1.1rem;">                
                 <p>
                     他にご質問などがあればお気軽にご連絡ください。   
-                    販売サイト（BASE）の<a href="{{ env('base_inquiry_url') }}" class="underline">お問い合わせページ</a>にて承っております。                    
+                    販売サイト（BASE）の<a href="{{ env('base_inquiry_url') }}" class="underline" target="_blank">お問い合わせページ</a>にて承っております。                    
                 </p>
             </div>
          
