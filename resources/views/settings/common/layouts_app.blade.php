@@ -151,7 +151,7 @@
                 $header_flg = true;
             }
         }
-
+        $header_flg = true;
 
     @endphp
 
