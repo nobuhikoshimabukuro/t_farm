@@ -180,6 +180,11 @@ header {
     width: 1.1rem;
     margin-bottom: 3px;
 }
+
+.aaa{
+    color: rgb(4, 2, 33);
+    font-size: 1.2rem;
+}
 </style>
 
 
@@ -400,9 +405,9 @@ header {
                 </ul>
 
                 <ul>
-                    <button class='d-flex' data-bs-toggle='modal' data-bs-target='#purchase_modal'>
+                    <button class='' data-bs-toggle='modal' data-bs-target='#purchase_modal'>
                         <img src="{{ asset('img/logo/cart.png') }}" class='instagram_logo' alt="cart_logo">
-                        <span class="aa">購入ページへ</span>                        
+                        <span class="aaa">購入ページへ</span>                        
                     </button>   
                 </ul>
 
