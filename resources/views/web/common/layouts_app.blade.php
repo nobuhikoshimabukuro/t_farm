@@ -67,9 +67,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+1p&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
     
-    <link rel="shortcut icon" href="{{ asset('img/logo/logo.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ asset('img/logo/logo.png')}}" sizes="180x180">
-    <link rel="icon" type="image/png" href="{{ asset('img/logo/logo.png')}}" sizes="192x192">
+    <link rel="shortcut icon" href="{{ asset('img/logo/kukuna_logo.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('img/logo/kukuna_logo.png')}}" sizes="180x180">
+    <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo.png')}}" sizes="192x192">
     
 
 
@@ -219,7 +219,7 @@ header {
 
                 <div class="">
                     <a class="" href="{{ route('web.index') }}">
-                        <img id="" src="{{ asset('img/logo/tf_logo.png') }}" class="tf_logo" alt="tf_logo">
+                        <img id="" src="{{ asset('img/logo/kukuna_logo.png') }}" class="kukuna_logo" alt="kukuna_logo">
                     </a>
                 </div>
                        
@@ -266,7 +266,7 @@ header {
 
             <div class="">
                 <a class="" href="{{ route('web.index') }}">
-                    <img id="" src="{{ asset('img/logo/tf_logo.png') }}" class="tf_logo" alt="tf_logo">
+                    <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
                 </a>
             </div>
                    
@@ -325,8 +325,8 @@ header {
              <!--▽▽ヘッダーロゴ▽▽-->
              <div class="">
                 <a class="p-0 m-0" href="{{ route('web.index') }}">
-                    <img id="" src="{{ asset('img/logo/tf_logo.png') }}" class="tf_logo" alt="tf_logo">
-                    {{-- <img id="" src="{{ asset('img/logo/kukuna.png') }}" class="tf_logo" alt="logo"> --}}
+                    <img id="" src="{{ asset('img/logo/kukuna_logo.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                    {{-- <img id="" src="{{ asset('img/logo/kukuna.png') }}" class="kukuna_logo" alt="logo"> --}}
                 </a>
             </div>
             <!--△△ヘッダーロゴ△△-->
@@ -366,7 +366,7 @@ header {
                             @endphp
                             <li>
                                 <a class="{{$add_class}}" href="{{route($info['route'])}}">        
-                                    <img id="" src="{{$info['src']}}" class="merchandise_logo" alt="tf_logo">                       
+                                    <img id="" src="{{$info['src']}}" class="merchandise_logo" alt="kukuna_logo">                       
                                     {{$info['label']}}
 
                                     @if($add_class != "")

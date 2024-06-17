@@ -12,9 +12,9 @@
     <link href="{{ asset('css/style.css') . $system_version }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') . $system_version }}" rel="stylesheet">    
     
-    <link rel="shortcut icon" href="{{ asset('img/logo/logo.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ asset('img/logo/logo.png')}}" sizes="180x180">
-    <link rel="icon" type="image/png" href="{{ asset('img/logo/logo.png')}}" sizes="192x192">
+    <link rel="shortcut icon" href="{{ asset('img/logo/kukuna_logo.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('img/logo/kukuna_logo.png')}}" sizes="180x180">
+    <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo.png')}}" sizes="192x192">
     
 
 

@@ -9,9 +9,9 @@
     <link href="http://127.0.0.1:8000/css/style.css" rel="stylesheet">
     <link href="http://127.0.0.1:8000/css/header.css" rel="stylesheet">    
     
-    <link rel="shortcut icon" href="http://127.0.0.1:8000/img/logo/logo.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="http://127.0.0.1:8000/img/logo/logo.png" sizes="180x180">
-    <link rel="icon" type="image/png" href="http://127.0.0.1:8000/img/logo/logo.png" sizes="192x192">
+    <link rel="shortcut icon" href="http://127.0.0.1:8000/img/logo/kukuna_logo.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="http://127.0.0.1:8000/img/logo/kukuna_logo.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="http://127.0.0.1:8000/img/logo/kukuna_logo.png" sizes="192x192">
     
 
 

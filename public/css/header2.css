@@ -21,7 +21,7 @@ header {
   background-color:rgb(111, 132, 229);        
 }
   
-header .tf_logo {
+header .kukuna_logo {
     height: 59px;    
 }
 
@@ -169,7 +169,7 @@ header .cart_logo {
       /* border-top: solid 0.5px rgba(255, 255, 255, 0.6); */
     }
 
-    header .tf_logo {
+    header .kukuna_logo {
         height: 59px;        
     }
 
