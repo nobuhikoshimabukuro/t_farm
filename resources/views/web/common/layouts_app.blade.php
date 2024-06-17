@@ -330,11 +330,15 @@ header {
                 </a>
             </div>
             <!--△△ヘッダーロゴ△△-->
+
+            <p class="m-0 p-0" style="line-height: 60px;">
+                KUKUNA-MANGO
+            </p>
     
             <!--▽▽カートロゴ▽▽-->
-            <button class='cart_logo_btn' data-bs-toggle='modal' data-bs-target='#purchase_modal'>
+            {{-- <button class='cart_logo_btn' data-bs-toggle='modal' data-bs-target='#purchase_modal'>
                 <img src="{{ asset('img/logo/cart.png') }}" class='cart_logo' alt="cart_logo">
-            </button>     
+            </button>      --}}
             <!--△△カートロゴ△△-->
 
                        
@@ -377,6 +381,12 @@ header {
                         @endif
                     @endforeach                    
                     
+
+
+                 
+
+
+
                     <li>
                         <a class="" href="{{ env('instagram_url')}}" target="_blank">                            
                             <img src="{{ asset('img/logo/instagram.png') }}" class="instagram_logo" alt="instagram">
@@ -384,9 +394,18 @@ header {
                         </a>
                     </li>
 
+
                                      
                     
                 </ul>
+
+                <ul>
+                    <button class='d-flex' data-bs-toggle='modal' data-bs-target='#purchase_modal'>
+                        <img src="{{ asset('img/logo/cart.png') }}" class='instagram_logo' alt="cart_logo">
+                        <span class="aa">購入ページへ</span>                        
+                    </button>   
+                </ul>
+
             </nav>
             <!--△△ハンバーガーメニューのリスト△△-->
 
