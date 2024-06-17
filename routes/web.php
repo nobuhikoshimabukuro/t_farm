@@ -15,6 +15,8 @@ use App\Http\Controllers\settings\question_m_controller;
 
 Route::get('/', [main_controller::class, 'index'])->name('web.index');
 
+Route::get('/test', [main_controller::class, 'index_test'])->name('web.index_test');
+
 Route::get('/merchandise', [main_controller::class, 'merchandise'])->name('web.merchandise');
 
 Route::get('/inquiry', [main_controller::class, 'inquiry'])->name('web.inquiry');

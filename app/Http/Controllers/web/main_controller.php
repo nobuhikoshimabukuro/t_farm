@@ -24,7 +24,7 @@ class main_controller extends Controller
 
     function index(Request $request)
     {       
-        
+      
         if(!$this->session_confirmation()){
             $desired_url = route('web.index');
             session()->flash('desired_url', $desired_url);
@@ -42,6 +42,18 @@ class main_controller extends Controller
             return view('web/screen/index', compact('instagram_t'));
         }
         
+     
+    }
+
+
+    function index_test(Request $request)
+    {       
+      
+        $instagram_t = instagram_t_model::
+        where('used_flg', '=', 1)
+        ->orderBy('display_order', 'asc')
+        ->get();
+        return view('web/screen/index_test', compact('instagram_t')); 
      
     }
 

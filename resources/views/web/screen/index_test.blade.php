@@ -13,125 +13,7 @@
   margin: 1vh 0;
 }
 
-.top-page-phot-area {
-  position: relative;  
-  width: 100%;    
-}
 
-.image {
-  top:0;
-  left: 0;
-  position: absolute;  
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  animation: change-img-anim 30s infinite;
-}
-
-.image:nth-of-type(1) {
-  animation-delay: 0s;
-}
-.image:nth-of-type(2) {
-  animation-delay: 10s;
-}
-.image:nth-of-type(3) {
-  animation-delay: 20s;
-}
-
-@keyframes change-img-anim {
-  0%{ opacity: 0;}
-  10%{ opacity: 1;}
-  90%{ opacity: 1;}
-  100%{ opacity: 0;}
-}
-
-
-
-.vertical {
-  writing-mode: vertical-rl;  
-  background-color: rgba(245, 195, 230, 0.4);
-  color: rgb(39, 30, 7);
-  font-weight: 600;
-}
-
-.text-1 {
-  position: absolute;    
-}
-
-.text-2 {
-  position: absolute; 
-}
-
-.text-3 {
-  position: absolute;  
-}
-
-/* PC用 */
-@media (min-width: 768px) {
-
-  .top-page-phot-area { 
-    height: 70vh;
-  }
-
-  .vertical {    
-    font-size: 40px;      
-  }
-
-  .text-1 {    
-    top: 20px;
-    right: 90px;
-  }
-
-  .text-2 {    
-    top: 80px;
-    right: 160px;
-  }
-
-  .text-3 {    
-    top: 140px;
-    right: 230px;
-  }
-
-
-  .greeting p{  
-    font-size: 20px;  
-    font-weight: 500;
-  }
-
-
-}
-
-/* モバイル用 */
-@media (max-width: 768px) {
-
-  .top-page-phot-area {
-    height: 50vh;
-  }
-
-  .vertical {    
-    font-size: 25px;
-  }
-
-  .text-1 {    
-    top: 10px;
-    right: 10px;
-  }
-
-  .text-2 {    
-    top: 50px;
-    right: 50px;
-  }
-
-  .text-3 {    
-    top: 90px;
-    right: 90px;
-  }
-
-  .greeting p{  
-    font-size: 18px;  
-  }
-
-}
 
 
 /* .title{
@@ -203,25 +85,48 @@
 /* 参考サイト
 https://junpei-sugiyama.com/swiper-summary/
 */
-.swiper {
-  height: 67vw;
-}
 
 .swiper-slide {
   overflow: hidden;
+  position: relative;
+}
+
+.swiper-img{
+  height: 100%;
 }
 .swiper-slide img {
-  height: auto;
+  height: 100%;
   width: 100%;
 }
+
 .swiper-text {
-  color: #fff;
-  left: 5%;
+  color: #fff;  
+  text-shadow: 1px 1px 2px #333;  
+  width: 70%;
   position: absolute;
-  text-shadow: 1px 1px 2px #333;
-  top: 50%;
-  width: 60%;
+  width: 70%;
 }
+
+.swiper-text-position1 {
+  top: 5%;
+  left: 5%;  
+}
+
+.swiper-text-position2 {
+  top: 5%;
+  right: 5%;  
+}
+
+.swiper-text-position3 {
+  bottom: 5%;
+  left: 5%;  
+}
+
+.swiper-text-position4 {
+  bottom: 5%;
+  right: 5%;  
+}
+
 .swiper-title {
   font-size: clamp(16px, 3vw, 50px);
   font-weight: 700;
@@ -231,153 +136,119 @@ https://junpei-sugiyama.com/swiper-summary/
   line-height: 1.5;
   margin-top: 3%;
 }
+
+
+.swiper-button{
+  color: #fff;  
+  text-shadow: 1px 1px 1px #333;  
+  font-weight: 400;
+}
+
+/* PC用 */
+@media (min-width: 768px) {
+
+.greeting p{  
+  font-size: 20px;  
+  font-weight: 500;
+}
+
+
+}
+
+/* モバイル用 */
+@media (max-width: 768px) {
+
+  .greeting p{  
+    font-size: 18px;  
+  }
+
+}
+
+
 </style>
 
 <div class="swiper">
+
   <div class="swiper-wrapper">
+
+
+
+
     <div class="swiper-slide">
+
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img
-          src="https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog01.jpg"
-          alt=""
-        />
+        <img class="image" src="{{ asset('img/top/0001.jpg') }}">    
       </div>
-      <div class="swiper-text">
-        <h3 class="swiper-title">チワワ</h3>
-        <p class="swiper-desc" data-swiper-parallax-x="70%">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+      <div class="swiper-text swiper-text-position1">
+        <h3 class="swiper-title">沖縄の自然の力を借りて<br>おいしいマンゴーを</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">          
         </p>
       </div>
+
     </div>
+
+
     <div class="swiper-slide">
+      
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img
-          src="https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog02.jpg"
-          alt=""
-        />
+        <img class="image" src="{{ asset('img/top/0002.jpg') }}">    
       </div>
-      <div class="swiper-text">
-        <h3 class="swiper-title">ポメラニアン&パピヨン</h3>
+
+      <div class="swiper-text swiper-text-position3">
+        <h3 class="swiper-title">南国の太陽を浴びてより</h3>
         <p class="swiper-desc" data-swiper-parallax-x="70%">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          説明2
         </p>
       </div>
+
     </div>
+   
+
     <div class="swiper-slide">
+      
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img
-          src="https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog03.jpg"
-          alt=""
-        />
+        <img class="image" src="{{ asset('img/top/0003.jpg') }}">    
       </div>
-      <div class="swiper-text">
-        <h3 class="swiper-title">パピヨン</h3>
+
+      <div class="swiper-text swiper-text-position1">
+        <h3 class="swiper-title">タイトル3</h3>
         <p class="swiper-desc" data-swiper-parallax-x="70%">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          説明3
         </p>
       </div>
+
     </div>
+
     <div class="swiper-slide">
+      
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img
-          src="https://junpei-sugiyama.com/wp-content/uploads/2021/08/dog04.jpg"
-          alt=""
-        />
+        <img class="image" src="{{ asset('img/top/1000.jpg') }}">    
       </div>
-      <div class="swiper-text">
-        <h3 class="swiper-title">フレンチブルドッグ</h3>
+      
+      <div class="swiper-text swiper-text-position3">
+        <h3 class="swiper-title">タイトル4</h3>
         <p class="swiper-desc" data-swiper-parallax-x="70%">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          説明4
         </p>
       </div>
+
     </div>
-    <div class="swiper-slide">
-      <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img
-          src="https://junpei-sugiyama.com/wp-content/uploads/2021/08/dog05.jpg"
-          alt=""
-        />
-      </div>
-      <div class="swiper-text">
-        <h3 class="swiper-title">チワワ</h3>
-        <p class="swiper-desc" data-swiper-parallax-x="70%">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img
-          src="https://junpei-sugiyama.com/wp-content/uploads/2021/08/dog06.jpg"
-          alt=""
-        />
-      </div>
-      <div class="swiper-text">
-        <h3 class="swiper-title">トイプードル</h3>
-        <p class="swiper-desc" data-swiper-parallax-x="70%">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-    </div>
+
+
+
+
   </div>
   <!-- ページネーション -->
   <div class="swiper-pagination"></div>
   <!-- 前後の矢印 -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <div class="swiper-button swiper-button-prev"></div>
+  <div class="swiper-button swiper-button-next"></div>
 </div>
 
 
 
 <div class="mt-3 text-center container">
-
-  <div class="contents row p-0">
-
-    <div class="col-12 m-0 p-0">
-      
-      <div class="top-page-phot-area">
-
-        {{-- PC --}}
-        <div class="wide d-none d-md-block w-100">
-
-        </div> 
-
-        {{-- スマホ --}}
-        <div class="d-block d-md-none w-100">
-
-        </div> 
-        <img class="image" src="{{ asset('img/top/0001.jpg') }}">        
-        <img class="image" src="{{ asset('img/top/0003.jpg') }}">
-        <img class="image" src="{{ asset('img/top/0002.jpg') }}">
-
-
-        <div class="text-area text-1">
-          {{-- <p class="vertical">沖縄の自然の恵みから生まれた最高のマンゴー</p>       --}}
-          <p class="vertical">沖縄の自然の</p>          
-        </div> 
-
-        <div class="text-area text-2">
-          <p class="vertical">恵みから生まれた</p>
-        </div> 
-
-        <div class="text-area text-3">
-          <p class="vertical">最高のマンゴー</p>
-        </div> 
-        
-     
-        
-      </div>  
-
-    </div>  
-
-
-  </div> 
 
   
   <div class="contents row p-0">
@@ -480,28 +351,95 @@ https://junpei-sugiyama.com/swiper-summary/
 <script type="text/javascript">
 
 
-const swiper = new Swiper(".swiper", {
-  loop: true, // ループ
-  speed: 1500, // 少しゆっくり(デフォルトは300)
-  slidesPerView: 1.3, // 一度に表示する枚数
-  spaceBetween: 30, // スライド間の距離
-  centeredSlides: true, // アクティブなスライドを中央にする
-  autoplay: {
-    // 自動再生
-    delay: 8000, // 1秒後に次のスライド
-    disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-  },
-  // ページネーション
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // 前後の矢印
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper(".swiper", {
+            loop: true, // ループ
+            speed: 1800, // 少しゆっくり(デフォルトは300)
+            slidesPerView: 1, // 一度に表示する枚数
+            spaceBetween: 0, // スライド間の距離
+            centeredSlides: true, // アクティブなスライドを中央にする
+            autoplay: {
+                delay: 6000, // 6秒後に次のスライド                
+                disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints:{       
+                768: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 15,
+                },
+                1024: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 30,
+                }
+            },
+            on: {
+                init: adjustSwiperHeight,
+                resize: adjustSwiperHeight,
+                slideChange: adjustSwiperHeight // スライドが変更されたときに高さを調整
+            }
+        });
+
+        function adjustSwiperHeight() {
+            var swiperSlide = document.querySelector('.swiper-slide');
+            if (swiperSlide) {
+                var slideWidth = swiperSlide.offsetWidth;
+                var swiperContainer = document.querySelector('.swiper');
+                var goldenRatio = 1.618;
+                swiperContainer.style.height = (slideWidth / goldenRatio) + 'px';
+            }
+        }
+
+        // 初期ロード時に高さを調整
+        adjustSwiperHeight();
+
+        // ウィンドウのリサイズ時に高さを調整
+        window.addEventListener('resize', adjustSwiperHeight);
+    });
+
+
+
+// const swiper = new Swiper(".swiper", {
+//   loop: true, // ループ
+//   speed: 1500, // 少しゆっくり(デフォルトは300)
+//   slidesPerView: 1, // 一度に表示する枚数
+//   spaceBetween: 30, // スライド間の距離
+//   centeredSlides: true, // アクティブなスライドを中央にする
+//   autoplay: {
+//     // 自動再生
+//     delay: 80000, // 1秒後に次のスライド
+//     disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+//   },
+//   // ページネーション
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   // 前後の矢印
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   breakpoints:{
+   
+//     768:{
+//       slidesPerView: 1.2,
+//     }
+//   }
+// });
+
+
 
 </script>
 
