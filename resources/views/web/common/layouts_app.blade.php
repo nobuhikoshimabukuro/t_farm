@@ -219,7 +219,7 @@ header {
 
                 <div class="">
                     <a class="" href="{{ route('web.index') }}">
-                        <img id="" src="{{ asset('img/logo/kukuna_logo.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                        <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
                     </a>
                 </div>
                        
@@ -325,7 +325,7 @@ header {
              <!--▽▽ヘッダーロゴ▽▽-->
              <div class="">
                 <a class="p-0 m-0" href="{{ route('web.index') }}">
-                    <img id="" src="{{ asset('img/logo/kukuna_logo.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                    <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
                     {{-- <img id="" src="{{ asset('img/logo/kukuna.png') }}" class="kukuna_logo" alt="logo"> --}}
                 </a>
             </div>

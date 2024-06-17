@@ -174,7 +174,7 @@
             <!--▽▽ヘッダーロゴ▽▽-->
                 <div class="">
                     <a class="" href="{{ route('settings.menu') }}">
-                        <img id="" src="{{ asset('img/logo/kukuna_logo.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                        <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
                     </a>
                 </div>
             
@@ -220,7 +220,7 @@
              <!--▽▽ヘッダーロゴ▽▽-->
              <div class="">
                 <a class="p-0 m-0" href="{{ route('settings.menu') }}">
-                    <img id="" src="{{ asset('img/logo/kukuna_logo.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                    <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
                 </a>
             </div>
             <!--△△ヘッダーロゴ△△-->
