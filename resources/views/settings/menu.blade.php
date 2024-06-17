@@ -46,9 +46,9 @@ $route_array = [
         ],
 
         [
-            'label' => 'systemCheck',
+            'label' => 'SystemInfo',
             'route' => route('settings.system_check'),            
-            'icon' => '',
+            'icon' => 'fas fa-book fa-3x mb-1',
             'display' => true,
         ]
     ];

@@ -30,7 +30,11 @@ Route::post('/password_check/password_check_process', [main_controller::class, '
 Route::post('/inquiry/send_inquiry_mail_process', [main_controller::class, 'send_inquiry_mail_process'])->name('web.send_inquiry_mail_process');
 
 
+Route::get('settings', [settings_controller::class, 'index'])->name('settings.index');
+
 Route::get('settings/login', [settings_controller::class, 'login'])->name('settings.login');
+
+Route::get('settings/logout', [settings_controller::class, 'logout'])->name('settings.logout');
 
 Route::post('settings/login_check', [settings_controller::class, 'login_check'])->name('settings.login_check');
 

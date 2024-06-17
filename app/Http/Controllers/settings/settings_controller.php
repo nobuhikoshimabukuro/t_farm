@@ -19,8 +19,24 @@ use App\Models\staff_m_model;
 class settings_controller extends Controller
 {
 
+    function index(Request $request)
+    {      
+
+        if(common::session_confirmation()){
+            return redirect()->route('settings.menu');
+        }else{
+            return redirect()->route('settings.login');
+        }    
+        
+    }
+
     function login(Request $request)
     {      
+
+        if(common::session_confirmation()){
+            return redirect()->route('settings.menu');
+        }    
+
         return view('settings/login');
     }
 
@@ -87,6 +103,7 @@ class settings_controller extends Controller
         if(!common::session_confirmation()){
             return redirect()->route('settings.login');
         }
+
         return view('settings/menu');
     }
 
@@ -101,7 +118,7 @@ class settings_controller extends Controller
     function logout(Request $request)
     {
         common::session_remove();
-        return view('settings/login');
+        return redirect()->route('settings.login');        
     }
 
 }

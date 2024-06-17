@@ -23,7 +23,7 @@ class question_m_controller extends Controller
 {
     function index(Request $request)
     {
-
+        
         if(!common::session_confirmation()){
             return redirect()->route('settings.login');
         }

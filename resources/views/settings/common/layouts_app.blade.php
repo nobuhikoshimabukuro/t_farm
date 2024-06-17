@@ -39,6 +39,13 @@
             'route' => route('settings.question_m.index'),
             'icon' => '<i class="fas fa-question-circle fa-3x mb-1"></i>',
             'display' => true,
+        ],
+
+        [
+            'label' => 'ログアウト',
+            'route' => route('settings.logout'),
+            'icon' => '<i class="fas fa-child"></i>',
+            'display' => true,
         ]
     ];
 
