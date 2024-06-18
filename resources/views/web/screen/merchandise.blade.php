@@ -232,9 +232,12 @@
                 
         </div>
     
-        @foreach($merchandise_m as $info)
+        @foreach($merchandise_m as $index => $info)        
 
             @php
+
+                $merchandise_index = $index;
+
                 $merchandise_id = $info->merchandise_id;
                 $merchandise_name = $info->merchandise_name;
                 $merchandise_description = $info->merchandise_description;
@@ -248,7 +251,7 @@
 
 
 
-            <div id="merchandise{{$merchandise_id}}" class="merchandise-area col-12 col-md-6 m-0">
+            <div id="merchandise{{$merchandise_index}}" class="merchandise-area col-12 col-md-6 m-0">
 
                 <div id="" class="merchandise-inner-area">                    
                         
@@ -305,7 +308,7 @@
                             <div class="col-1 m-0 p-0 scroll-btn-area">   
                                 <button class="scroll-btn"
                                 data-direction='1'
-                                data-merchandiseid="{{$merchandise_id}}" 
+                                data-merchandiseindex="{{$merchandise_index}}" 
                                 >
                                         <i class="fas fa-angle-double-left arrow_logo"></i>
                                 </button>                      
@@ -320,7 +323,7 @@
 
                                         <div id='' class="sub-photo-div">                                                
                                             <button type="button" id="" class="photo_button m-0 p-0"                         
-                                            data-merchandiseid="{{$merchandise_id}}" 
+                                            data-merchandiseindex="{{$merchandise_index}}" 
                                             data-kinds="{{$index}}" 
                                             data-targetpath="{{$image_info->asset_path}}" 
                                             data-imagename="{{$image_info->image_name}}" 
@@ -348,7 +351,7 @@
                             <div class="col-1 scroll-btn-area m-0 p-0">   
                                 <button class="scroll-btn"
                                 data-direction='2'
-                                data-merchandiseid="{{$merchandise_id}}" 
+                                data-merchandiseindex="{{$merchandise_index}}" 
                                 >
                                     <i class="fas fa-angle-double-right arrow_logo"></i>
                                 </button>                      
@@ -456,31 +459,31 @@
         
         
         var targetpath = $(this).data('targetpath');
-        var merchandiseid = $(this).data('merchandiseid');
+        var merchandiseindex = $(this).data('merchandiseindex');
         var kinds = $(this).data('kinds');
         var file_name = $(this).data('imagename');
         
         
 
-        $('#merchandise'+ merchandiseid + ' .sub-photo').removeClass('select-border');
-        $('#merchandise'+ merchandiseid + ' .sub-photo').removeClass('none-select-border');      
+        $('#merchandise'+ merchandiseindex + ' .sub-photo').removeClass('select-border');
+        $('#merchandise'+ merchandiseindex + ' .sub-photo').removeClass('none-select-border');      
 
 
-        $('#merchandise'+ merchandiseid + ' .sub-photo').addClass('none-select-border');
+        $('#merchandise'+ merchandiseindex + ' .sub-photo').addClass('none-select-border');
 
-        $('#merchandise'+ merchandiseid + ' .kinds' + kinds).removeClass('none-select-border');      
-        $('#merchandise'+ merchandiseid + ' .kinds' + kinds).addClass('select-border');  
+        $('#merchandise'+ merchandiseindex + ' .kinds' + kinds).removeClass('none-select-border');      
+        $('#merchandise'+ merchandiseindex + ' .kinds' + kinds).addClass('select-border');  
         
         
         
-        $('#merchandise'+ merchandiseid + ' .main-photo-area').empty();
+        $('#merchandise'+ merchandiseindex + ' .main-photo-area').empty();
 
         var Element = "";
 
         Element +="<img id=''class='merchandise-photo' src='" + targetpath + "' alt='" + file_name + "'>";
 
         
-        $('#merchandise'+ merchandiseid + ' .main-photo-area').append(Element);           
+        $('#merchandise'+ merchandiseindex + ' .main-photo-area').append(Element);           
        
 
     });
@@ -490,13 +493,13 @@
 
     $('.scroll-btn').click(function () {
 
-        var merchandiseid = $(this).data('merchandiseid');
+        var merchandiseindex = $(this).data('merchandiseindex');
 
 
         //左右の値(左 = 1 :: 右 = 2)
         var direction = $(this).data('direction');
 
-        var scroll_area = '#merchandise' + merchandiseid + ' .photo-select-area';
+        var scroll_area = '#merchandise' + merchandiseindex + ' .photo-select-area';
 
         var scroll_range = 250;
        
