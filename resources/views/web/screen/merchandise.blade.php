@@ -60,6 +60,10 @@
     /* justify-content: center; */
 }
 
+.sub-photo-area{
+    max-height:11vh; 
+    min-height:11vh; 
+}
 
 .sub-photo-div {  
     min-width:14vh; 
@@ -111,8 +115,9 @@
 
 
 .merchandise-explanation-area{
-  text-align: left;
-  padding: 0 1vh;
+    margin-top: 2vh;
+    text-align: left;
+    padding: 0 1vh;
 }
 
 .merchandise-explanation{
@@ -286,7 +291,7 @@
                     </div> 
 
 
-                    <div class="col-12 m-0 p-0">     
+                    <div class="col-12 mb-2 p-0">     
 
                         <div class="main-photo-area mb-1">                
                             @if(count($merchandise_image_t) > 0)
@@ -298,7 +303,8 @@
                         </div>       
 
                         
-                        <div class="row mt-1">
+                        
+                        <div class="row mt-1 sub-photo-area">
 
                             <div class="col-1 m-0 p-0 arrow-area">   
                                 {{-- モバイル用矢印 --}}
@@ -365,11 +371,13 @@
                         </div>
 
                         
+
+                        
                     </div>
 
 
                     
-                    <div class="merchandise-explanation-area col-12 m-0">
+                    <div class="col-12 merchandise-explanation-area">
                         <p class="merchandise-explanation">{!! nl2br($merchandise_description) !!}</p>                        
                     </div>
 
