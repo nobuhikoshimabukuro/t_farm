@@ -39,34 +39,6 @@
 }
 
 
-.title{
-  padding-top: 1px;
-  padding-bottom: 1px;
-  font-weight: bold;
-  font-size: 16px;
-  position: relative;
-  text-align: left;
-}
-.title::before{
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(
-    to right, 
-    #f98469 0%, #f98469 25%, /*ピンク*/
-    #ffd12a 25%, #ffd12a 50%, /*黄色*/
-    #a4de32 50%, #a4de32 75%, /*緑*/
-    #91c0f1 75%, #91c0f1 100% /*青*/
-  );
-}
-
-.underline{
-  border-bottom: dotted 2px blue;
-}
-
-
 
 .photo-select-area{   
    overflow-x:auto;     
@@ -256,7 +228,7 @@ https://junpei-sugiyama.com/swiper-summary/
 
     <div id="" class="col-12 m-0 p-0">
 
-      <div id="" class="title">
+      <div id="" class="contents-title">
         <h4 class="p-0 text-start">ご挨拶</h4>
       </div> 
 
@@ -294,7 +266,7 @@ https://junpei-sugiyama.com/swiper-summary/
 
 
     <div id="" class="col-12 m-0 p-0">
-      <div id="" class="title">
+      <div id="" class="contents-title">
         <h4 class="p-0 text-start">Instagram</h4>
       </div> 
 

@@ -145,9 +145,6 @@
 }
 
 
-.underline{
-  border-bottom: dotted 2px blue;
-}
 
 
 header {

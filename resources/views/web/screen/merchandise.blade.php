@@ -14,7 +14,7 @@
 }
 
 .merchandise-inner-area{  
-    background-color: rgb(248, 248, 242);
+    background-color: rgb(248, 248, 248);
     border: 0.5px solid rgb(248, 248, 215); 
     border-radius: 10px;
     height: 100%;
