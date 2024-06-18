@@ -349,7 +349,7 @@
                                 id='merchandise_image_input'
                                 name="merchandise_image_input" 
                                 class="d-none"
-                                accept=".png , .PNG , .jpg , .JPG , .jpeg , .JPEG">
+                                accept=".jfif, .png , .PNG , .jpg , .JPG , .jpeg , .JPEG">
     
                             <button type="button" id='' class="btn btn-success merchandise-image-input-button" >画像選択</button>    
                             <button type="button" class="reset-button btn btn-secondary">リセット <i class="fas fa-minus-square"></i></button>

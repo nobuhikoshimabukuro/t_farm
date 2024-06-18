@@ -273,7 +273,7 @@ https://junpei-sugiyama.com/swiper-summary/
           特別な瞬間を彩る一品として、私たちのマンゴーをお選びいただければ幸いです。
           <br>
           ご注文は簡単で、全国配送も承っております。ぜひこの機会に、当農園自慢のマンゴーをご堪能ください。
-          <br>          
+          <br>
           <span class="emphasis item-flash">
             2024年分の販売予約を開始しました。
             
@@ -354,7 +354,7 @@ https://junpei-sugiyama.com/swiper-summary/
 document.addEventListener('DOMContentLoaded', function() {
         const swiper = new Swiper(".swiper", {
             loop: true, // ループ
-            speed: 1800, // 少しゆっくり(デフォルトは300)
+            speed: 1900, // 少しゆっくり(デフォルトは300)
             slidesPerView: 1, // 一度に表示する枚数
             spaceBetween: 0, // スライド間の距離
             centeredSlides: true, // アクティブなスライドを中央にする
@@ -410,34 +410,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// const swiper = new Swiper(".swiper", {
-//   loop: true, // ループ
-//   speed: 1500, // 少しゆっくり(デフォルトは300)
-//   slidesPerView: 1, // 一度に表示する枚数
-//   spaceBetween: 30, // スライド間の距離
-//   centeredSlides: true, // アクティブなスライドを中央にする
-//   autoplay: {
-//     // 自動再生
-//     delay: 80000, // 1秒後に次のスライド
-//     disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-//   },
-//   // ページネーション
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-//   // 前後の矢印
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-//   breakpoints:{
-   
-//     768:{
-//       slidesPerView: 1.2,
-//     }
-//   }
-// });
 
 
 
