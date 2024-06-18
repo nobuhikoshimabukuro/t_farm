@@ -67,9 +67,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+1p&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
     
-    <link rel="shortcut icon" href="{{ asset('img/logo/kukuna_logo.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ asset('img/logo/kukuna_logo.png')}}" sizes="180x180">
-    <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo.png')}}" sizes="192x192">
+    <link rel="shortcut icon" href="{{ asset('img/logo/kukuna_logo.ico') . $system_version}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" sizes="180x180">
+    <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" sizes="192x192">
     
 
 

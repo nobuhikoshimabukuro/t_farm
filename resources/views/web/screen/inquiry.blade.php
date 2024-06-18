@@ -80,66 +80,6 @@
 }
 /* Q&A  end */
 
-/* お問い合わせの説明書き   start */
-.explanation-area{
-    padding: 1vh;
-}
-
-.explanation-area p{
-    color: #270e04;    
-    font-weight: 600;
-}
-/* お問い合わせの説明書き   end */
-
-
-.form-table{
-    min-width: 100%;
-}
-
-.form-table td{
-    padding: 0 1vh;
-    font-weight: 600;
-}
-
-.form-table textarea{
-    resize: none;
-}
-
-
-#send_mail_button{
-    margin-top: 1vh;
-}
-
-
-
-
-
-
-.flowing {
-	width: 0;
-	margin: 0;
-	font-size: 19px;
-	font-weight: bold;
-	/* color: #ff6347; */
-    color: #270e04;
-	white-space: nowrap;
-	overflow: hidden;
-	animation: flowing-anim 3s forwards linear;
-}
-
-.flowing:nth-child(2) {
-	animation-delay: 2.5s;
-}
-
-
-@keyframes flowing-anim {
- 0%{
-	 width: 0%;
-   }
-100%{
-	 width: 100%;
-   }
-}
 
 
 
@@ -147,14 +87,13 @@
 
 <div id="main" class="mt-3 container">
 
-
-    <div class="merchandise-area row">      
+    <div class="row">      
         
-        <div class="merchandise-name-area col-12 m-0 p-0 text-center">
-            <h3 class="merchandise-name">
+        <div class="col-12 m-0 ">
+            <h3 class="test text-start">
                 よくあるご質問
-            </h3>         
-        </div>   
+            </h3>                
+        </div>
 
         <div class="col-12 info-box" style="padding: 1vh;">
 
@@ -176,7 +115,7 @@
 
             
 
-            <div class="col-12 mt-1 p-0 text-start" style="font-size: 1.1rem;">                
+            <div class="col-12 mt-2 p-0 text-start" style="font-size: 1.2rem;">                
                 <p>
                     他にご質問などがあればお気軽にご連絡ください。   
                     販売サイト（BASE）の<a href="{{ env('base_inquiry_url') }}" class="underline" target="_blank">お問い合わせページ</a>にて承っております。                    

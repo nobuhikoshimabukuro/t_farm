@@ -20,7 +20,7 @@
     height: 100%;
 }
 
-.merchandise-photo{    
+.merchandise-photo{
     width: 100%;    
     height:  100%;
     object-fit: contain; 
@@ -66,12 +66,8 @@
     max-width:14vh; 
     max-height:10vh; 
     min-height:10vh;  
-    padding: 1px;   
-    
+    padding: 1px;    
 }
-
-
-
 
 .photo_button {
     width:100%;    
@@ -109,7 +105,7 @@
 
 .arrow_logo{
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 550;
     color: rgb(7, 124, 166);
 }
 
@@ -232,7 +228,7 @@
 
             <h3 class="test text-start">
                 商品紹介
-             </h3>
+            </h3>
                 
         </div>
     
