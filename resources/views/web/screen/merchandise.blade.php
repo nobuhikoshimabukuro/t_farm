@@ -288,7 +288,7 @@
 
                     <div class="col-12 m-0 p-0">     
 
-                        <div class="main-photo-area">                
+                        <div class="main-photo-area mb-1">                
                             @if(count($merchandise_image_t) > 0)
                                 <img src="{{$merchandise_image_t[0]->asset_path}}" class="merchandise-photo" alt="{{$merchandise_image_t[0]->image_name}}">
                             @else
@@ -298,7 +298,7 @@
                         </div>       
 
                         
-                        <div class="row">
+                        <div class="row mt-1">
 
                             <div class="col-1 m-0 p-0 arrow-area">   
                                 {{-- モバイル用矢印 --}}
