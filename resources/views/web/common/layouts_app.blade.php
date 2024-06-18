@@ -326,6 +326,7 @@ header {
     
             <!--▽▽ハンバーガーメニューのリスト▽▽-->
             <nav class="sm">
+
                 <ul>
 
                     @foreach ($route_array as $info)
@@ -338,7 +339,7 @@ header {
                                     $add_class = "active";
                                 }
                             @endphp
-                            <li>
+                            <li class="li-dark">
                                 <a class="{{$add_class}}" href="{{route($info['route'])}}">        
                                     <img id="" src="{{$info['src']}}" class="merchandise_logo" alt="kukuna_logo">                       
                                     {{$info['label']}}
@@ -351,31 +352,22 @@ header {
                         @endif
                     @endforeach                    
                     
-
-
-                 
-
-
-
-                    <li>
+                    <li class="li-dark">
                         <a class="" href="{{ env('instagram_url')}}" target="_blank">                            
                             <img src="{{ asset('img/logo/instagram.png') }}" class="instagram_logo" alt="instagram">
                             instagram
                         </a>
-                    </li>
-
-
-                                     
+                    </li> 
+                    
+                    <li class="li-clear">
+                        <a class="" data-bs-toggle='modal' data-bs-target='#purchase_modal'>                            
+                            <img src="{{ asset('img/logo/cart.png') }}" class="instagram_logo" alt="cart">
+                            購入ページへ
+                        </a>
+                    </li>  
                     
                 </ul>
-
-                <ul>
-                    <button class='' data-bs-toggle='modal' data-bs-target='#purchase_modal'>
-                        <img src="{{ asset('img/logo/cart.png') }}" class='instagram_logo' alt="cart_logo">
-                        <span class="aaa">購入ページへ</span>                        
-                    </button>   
-                </ul>
-
+             
             </nav>
             <!--△△ハンバーガーメニューのリスト△△-->
 
@@ -447,14 +439,11 @@ header {
 
 @yield('content')
 
-
-
-<footer class="footer">
+    <footer class="footer">
         <div class="footer-content">
-        &copy; KUKUNA-MANGO. All rights reserved.
-    </div>
-            
-</footer>
+            &copy; KUKUNA-MANGO. All rights reserved.
+        </div>
+    </footer>
 
 <script src="{{ asset('js/bootstrap.js') . $system_version}}"></script>
 <script src="{{ asset('js/swiper-bundle.min.js') . $system_version}}"></script>

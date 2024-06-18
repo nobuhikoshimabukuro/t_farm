@@ -149,7 +149,7 @@ header .cart_logo {
         position: absolute;
         z-index: 10;
         width: 100%;
-        background-color: rgba(34, 49, 52, 0.9);
+        /* background-color: rgba(34, 49, 52, 0.9); */
     }
   
     header ul {
@@ -160,12 +160,29 @@ header .cart_logo {
         border-top: solid 0.5px rgba(255, 255, 255, 0.6);
     }
 
+    .li-dark{      
+      background-color: rgba(34, 49, 52, 0.9);
+    }    
+    .li-dark a{
+      color: azure;            
+    }
+
+    .li-clear{
+      background-color: rgba(255, 255, 255, 0.9);
+      
+    }
+
+    .li-clear a{
+      color: rgb(34, 49, 52);
+      font-weight: 550;
+    }
+
     header a {
       /* text-align: center;  */      
       text-align: left; 
       margin-left: 20%;
       font-weight: 400;
-      color: azure;
+      /* color: azure; */
       /* border-top: solid 0.5px rgba(255, 255, 255, 0.6); */
     }
 

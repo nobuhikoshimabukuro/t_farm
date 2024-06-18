@@ -15,7 +15,7 @@
     border: none;
     border-radius: 5px;
     box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgba(0 0 0 / 5%);
-    background-color: #f4ebf5;
+    background-color: #f5fdd1;
     font-size: 1.1rem;
 }
 
@@ -24,7 +24,8 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 1em 2em 1em 3em;
+    padding: 1em 1em 1em 3em;
+    
     color: #333333;
     font-weight: 600;
     cursor: pointer;
@@ -63,7 +64,7 @@
     transform: translateY(-10px);
     opacity: 0;
     margin: 0;
-    padding: .3em 3em 1.5em;
+    padding: .3em 2em 1em 3em;
     color: #333;
     transition: transform .5s, opacity .5s;
 }
@@ -81,6 +82,9 @@
 /* Q&A  end */
 
 
+.answer{
+    
+}
 
 
 </style>
@@ -105,7 +109,7 @@
                         {!! nl2br($info->question) !!}
                     </summary>
 
-                    <p>
+                    <p class="answer">
                         {!! nl2br($info->answer) !!}                        
                     </p>
 
