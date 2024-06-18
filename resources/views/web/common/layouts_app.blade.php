@@ -72,6 +72,8 @@
     <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" sizes="192x192">
     
 
+    <meta name="thumbnail" content="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" />
+
 
     <meta name="csrf-token" content="{{ csrf_token() }}">  {{-- CSRFトークン --}}
     @yield('pagehead')
@@ -215,52 +217,6 @@ header {
 
     @if($header_flg)
 
-    {{-- PC --}}
-    {{-- <div class="d-none d-md-block w-100">
-       
-        <header class="m-0 p-0">
-
-            
-
-                <div class="">
-                    <a class="" href="{{ route('web.index') }}">
-                        <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
-                    </a>
-                </div>
-                       
-            
-                <h3 class="m-0 p-0" style="line-height: 60px;">
-                    たかすじファーム
-                </h3>
-                <nav class="pc">
-                    <ul>
-                        @foreach ($route_array as $info)
-                            @if($info["display"])
-                                <li>
-                                    <a href="{{$info['route']}}">                                
-                                        {{$info['label']}}
-                                    </a>
-                                </li>
-                            @endif
-                        @endforeach                        
-                        <li>
-                            <a class="" href="{{ env('instagram_url')}}" target="_blank">
-                                <img src="{{ asset('img/logo/instagram.png') }}" class="instagram_logo" alt="instagram">
-                            </a>
-                        </li>  
-
-
-                        <button class='cart_logo_btn' data-bs-toggle='modal' data-bs-target='#purchase_modal'>
-                            <img src="{{ asset('img/logo/cart.png') }}" class='cart_logo' alt="cart_logo">
-                        </button>     
-
-
-                    </ul>
-                </nav>            
-            
-        </header>
-
-    </div> --}}
 
 
     <div class="d-none d-md-block w-100">
