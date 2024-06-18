@@ -72,8 +72,8 @@
     <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" sizes="192x192">
     
 
-    <meta name="thumbnail" content="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" />
-
+    <meta name="thumbnail" content="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" >
+    <meta name="csrf-token" content="{{ csrf_token() }}">  {{-- CSRFトークン --}}
     <PageMap>
         <DataObject type="thumbnail">
            <Attribute name="src" value="{{ asset('img/logo/kukuna_logo.png') . $system_version}}"/>
@@ -84,7 +84,7 @@
 
 
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">  {{-- CSRFトークン --}}
+    
     @yield('pagehead')
     <title>@yield('title')</title>
 
