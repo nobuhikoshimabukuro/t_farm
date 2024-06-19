@@ -183,7 +183,7 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
       
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0010.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0010.JPG') }}">    
       </div>
 
       <div class="swiper-text swiper-text-position1">
@@ -197,7 +197,7 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
       
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0009.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0009.JPG') }}">    
       </div>
       
       <div class="swiper-text swiper-text-position3">
@@ -354,7 +354,7 @@ https://junpei-sugiyama.com/swiper-summary/
 
         const swiper1 = new Swiper(".swiper1", {
             loop: true, // ループ
-            speed: 2100, // 少しゆっくり(デフォルトは300)
+            speed: 2000, // 少しゆっくり(デフォルトは300)
             slidesPerView: 1, // 一度に表示する枚数
             spaceBetween: 0, // スライド間の距離
             centeredSlides: true, // アクティブなスライドを中央にする
