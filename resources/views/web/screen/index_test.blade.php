@@ -131,7 +131,7 @@ https://junpei-sugiyama.com/swiper-summary/
 @media (max-width: 768px) {
 
   .greeting p{  
-    font-size: 18px;  
+    font-size: 1rem;  
   }
 
 }
@@ -143,17 +143,14 @@ https://junpei-sugiyama.com/swiper-summary/
 
   <div class="swiper-wrapper">
 
-
-
-
     <div class="swiper-slide">
 
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0001.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0003.jpg') }}">    
       </div>
 
       <div class="swiper-text swiper-text-position1">
-        <h3 class="swiper-title">沖縄の自然の力を借りて<br>おいしいマンゴーを</h3>
+        <h3 class="swiper-title">沖縄の自然の力を借りて育てた<br>おいしいマンゴーを届けたい</h3>
         <p class="swiper-desc" data-swiper-parallax-x="70%">          
         </p>
       </div>
@@ -164,13 +161,12 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
       
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0002.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0008.JPG') }}">    
       </div>
 
       <div class="swiper-text swiper-text-position3">
-        <h3 class="swiper-title">南国の太陽を浴びてより</h3>
-        <p class="swiper-desc" data-swiper-parallax-x="70%">
-          説明2
+        <h3 class="swiper-title">1つひとつ大切に育てています</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">          
         </p>
       </div>
 
@@ -180,13 +176,12 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
       
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0003.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0010.jpg') }}">    
       </div>
 
       <div class="swiper-text swiper-text-position1">
-        <h3 class="swiper-title">タイトル3</h3>
-        <p class="swiper-desc" data-swiper-parallax-x="70%">
-          説明3
+        <h3 class="swiper-title">大切な人への贈り物にいかがですか</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">          
         </p>
       </div>
 
@@ -195,20 +190,16 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
       
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/1000.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0009.jpg') }}">    
       </div>
       
       <div class="swiper-text swiper-text-position3">
-        <h3 class="swiper-title">タイトル4</h3>
-        <p class="swiper-desc" data-swiper-parallax-x="70%">
-          説明4
+        <h3 class="swiper-title">農園の外観</h3>
+        <p class="swiper-desc" data-swiper-parallax-x="70%">          
         </p>
       </div>
 
     </div>
-
-
-
 
   </div>
   <!-- ページネーション -->
@@ -326,12 +317,12 @@ https://junpei-sugiyama.com/swiper-summary/
 document.addEventListener('DOMContentLoaded', function() {
         const swiper = new Swiper(".swiper", {
             loop: true, // ループ
-            speed: 1900, // 少しゆっくり(デフォルトは300)
+            speed: 2100, // 少しゆっくり(デフォルトは300)
             slidesPerView: 1, // 一度に表示する枚数
             spaceBetween: 0, // スライド間の距離
             centeredSlides: true, // アクティブなスライドを中央にする
             autoplay: {
-                delay: 6000, // 6秒後に次のスライド                
+                delay: 8000, // 8秒後に次のスライド                
                 disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
             },
             pagination: {
