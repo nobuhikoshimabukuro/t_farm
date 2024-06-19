@@ -1,7 +1,7 @@
 @extends('web.common.layouts_app')
 
 @section('pagehead')
-@section('title', 'ククナマンゴー')  
+@section('title', 'ククナマンゴーテスト')  
 
 @endsection
 @section('content')
@@ -116,10 +116,6 @@ https://junpei-sugiyama.com/swiper-summary/
   font-weight: 400;
 }
 
-/* スライドの動き等速 */
-.swiper-wrapper {
-  transition-timing-function: linear;
-}
 
 
 
@@ -263,7 +259,7 @@ https://junpei-sugiyama.com/swiper-summary/
     </div> 
 
 
-    {{-- <div id="" class="col-12 m-0 p-0">
+    <div id="" class="col-12 m-0 p-0">
       <div id="" class="contents-title">
         <h4 class="p-0 text-start">Instagram</h4>
       </div> 
@@ -295,33 +291,8 @@ https://junpei-sugiyama.com/swiper-summary/
          
       </div>
 
-    </div> --}}
-
-
-    <div id="" class="col-12 m-0 p-0">
-
-      <div id="" class="contents-title">
-        <h4 class="p-0 text-start">Instagram</h4>
-      </div> 
-
-      <div class="swiper swiper2 mt-2">
-
-        <div class="swiper-wrapper">
-          @foreach ($instagram_t as $index => $info)
-
-            
-            <div class="swiper-slide">        
-              {{$info->title}}
-
-              {!! $info->embedded_characters !!}
-            </div>       
-
-          @endforeach         
-        </div>
-
-      </div>
-
     </div>
+
 
 
 
@@ -407,27 +378,6 @@ https://junpei-sugiyama.com/swiper-summary/
         // ウィンドウのリサイズ時に高さを調整
         window.addEventListener('resize', adjustSwiperHeight);
 
-        const swiper2 = new Swiper(".swiper2", {
-          loop: true, // ループ
-          slidesPerView: 1.1, // 一度に表示する枚数
-          speed: 8000, // ループの時間
-          allowTouchMove: true, // スワイプ有効
-          autoplay: { //自動再生
-            delay: 0, // 途切れなくループ
-            disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-          },
-          breakpoints:{       
-                768: {
-                    slidesPerView: 2,                    
-                },
-                1024: {
-                    slidesPerView: 2.5,
-                },
-                1200: {
-                    slidesPerView: 3,                    
-                }
-            }
-        });
 
   });
 
