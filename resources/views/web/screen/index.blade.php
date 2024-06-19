@@ -146,7 +146,7 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
 
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0003.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0003.jpg') }}" alt="沖縄の自然">    
       </div>
 
       <div class="swiper-text swiper-text-position1">
@@ -161,7 +161,7 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
       
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0008.JPG') }}">    
+        <img class="image" src="{{ asset('img/top/0008.JPG') }}" alt="マンゴーの育成画像">    
       </div>
 
       <div class="swiper-text swiper-text-position3">
@@ -176,7 +176,7 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
       
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0010.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0010.JPG') }}" alt="収穫したマンゴー">    
       </div>
 
       <div class="swiper-text swiper-text-position1">
@@ -190,7 +190,7 @@ https://junpei-sugiyama.com/swiper-summary/
     <div class="swiper-slide">
       
       <div class="swiper-img" data-swiper-parallax-x="90%">
-        <img class="image" src="{{ asset('img/top/0009.jpg') }}">    
+        <img class="image" src="{{ asset('img/top/0009.JPG') }}" alt="農園風景">    
       </div>
       
       <div class="swiper-text swiper-text-position3">
