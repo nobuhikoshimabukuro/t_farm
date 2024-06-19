@@ -78,9 +78,15 @@ class main_controller extends Controller
 
         }
 
+        if(env('APP_DEBUG')){
+            return view('web/screen/merchandise_test', compact('merchandise_m'));         
+        }else{
+            return view('web/screen/merchandise', compact('merchandise_m'));
+        }
+
         
 
-        return view('web/screen/merchandise', compact('merchandise_m'));
+        
     }
 
     function farminfo(Request $request)
