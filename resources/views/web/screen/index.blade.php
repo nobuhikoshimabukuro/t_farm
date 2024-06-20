@@ -354,7 +354,7 @@ https://junpei-sugiyama.com/swiper-summary/
 
         const swiper1 = new Swiper(".swiper1", {
             loop: true, // ループ
-            speed: 2000, // 少しゆっくり(デフォルトは300)
+            speed: 1500, // 少しゆっくり(デフォルトは300)
             slidesPerView: 1, // 一度に表示する枚数
             spaceBetween: 0, // スライド間の距離
             centeredSlides: true, // アクティブなスライドを中央にする
