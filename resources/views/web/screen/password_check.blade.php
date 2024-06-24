@@ -22,7 +22,7 @@
         
         <div class="col-12 mt-5 text-center p-0">
             <h3>
-                たかすじファームWEB開発中
+                ククナファームWEB開発中
             </h3>
         </div>
 

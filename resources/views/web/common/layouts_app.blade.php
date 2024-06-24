@@ -403,7 +403,7 @@ header {
                         BASEでも販売品や料金を確認できます。                      
                         <br>
                         <a href="{{ env('base_url')}}" target="_blank" class="underline">
-                            たかすじファーム購入ページ
+                            ククナファーム購入ページ
                         </a>
                         
                         <br>

@@ -50,7 +50,7 @@ class InquiryMail extends Mailable
 
         if($this->branch == 1){
 
-            $subject = "たかすじファームからの自動送信メールです。";
+            $subject = "ククナファームからの自動送信メールです。";
 
             return $this
             ->view('mails.noreply')

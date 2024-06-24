@@ -233,7 +233,7 @@ https://junpei-sugiyama.com/swiper-summary/
       <div id="" class="greeting">
 
         <p class="text-start">
-          こんにちは!!沖縄県宜野座村でマンゴー農家を営んでいるたかすじファームと申します。       
+          こんにちは!!沖縄県宜野座村でマンゴー農家を営んでいるククナファームと申します。       
           <br>
           私たちの農園で丹精込めて育てたマンゴーは、豊かな自然と愛情に包まれ、一つひとつ丁寧に収穫しています。
           <br>
@@ -374,14 +374,17 @@ https://junpei-sugiyama.com/swiper-summary/
                 768: {
                     slidesPerView: 1.2,
                     spaceBetween: 15,
+                    speed: 1200,
                 },
                 1024: {
                     slidesPerView: 1.3,
                     spaceBetween: 20,
+                    speed: 1300,
                 },
                 1200: {
                     slidesPerView: 1.5,
                     spaceBetween: 30,
+                    speed: 1400,
                 }
             },
             on: {
