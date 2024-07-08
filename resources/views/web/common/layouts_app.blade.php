@@ -383,6 +383,26 @@ header {
 
     @endif
 
+
+
+
+
+    <!-- ページトップへ戻るボタン -->
+    {{-- <div id="page_top"><a href="#"></a></div> --}}
+    <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+    {{-- </div> --}}
+  
+    
+
+@yield('content')
+
+    <footer class="footer">
+        <div class="footer-content">
+            &copy; KUKUNA-MANGO. All rights reserved.
+        </div>
+    </footer>
+
+    
     {{-- 購入案内モーダル --}}
     <div class="modal fade" id="purchase_modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="purchase_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -398,9 +418,9 @@ header {
                 <div class="modal-body">
 
                     <p>
-                        販売はBASEにて行っております。
+                        農園直送ですが、販売はBASEにて行っております。
                         <br>
-                        BASEでも販売品や料金を確認できます。                      
+                        BASEでも販売品や料金を確認できます。
                         <br>
                         <a href="{{ env('base_url')}}" target="_blank" class="underline">
                             ククナファーム購入ページ
@@ -423,24 +443,7 @@ header {
             </div>
         </div>
     </div>
-
-
-
-
-    <!-- ページトップへ戻るボタン -->
-    {{-- <div id="page_top"><a href="#"></a></div> --}}
-    <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
-    {{-- </div> --}}
-  
     
-
-@yield('content')
-
-    <footer class="footer">
-        <div class="footer-content">
-            &copy; KUKUNA-MANGO. All rights reserved.
-        </div>
-    </footer>
 
 <script src="{{ asset('js/bootstrap.js') . $system_version}}"></script>
 <script src="{{ asset('js/swiper-bundle.min.js') . $system_version}}"></script>
