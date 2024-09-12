@@ -63,6 +63,8 @@ php artisan make:migration mod_m_torihikisaki --table=m_torihikisaki
 ・コントローラー作成
 php artisan make:controller TorihikisakiController
 
+php artisan make:controller TorihikisakiController
+
 ・モデル作成
 php artisan make:model Torihiki_Item_T
 php artisan make:model employer_password_t_model

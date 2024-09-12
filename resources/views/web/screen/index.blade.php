@@ -246,9 +246,11 @@ https://junpei-sugiyama.com/swiper-summary/
           ご注文は簡単で、全国配送も承っております。ぜひこの機会に、当農園自慢のマンゴーをご堪能ください。
           <br>
           <span class="emphasis item-flash">
-            2024年分の販売予約を開始しました。
-            
-            詳細はInstagramをチェックしてください。
+            皆様からのご愛顧により、2024年分の販売は終了いたしました。
+            <br>            
+            来年に向けて、精一杯マンゴーを育ててまいります。
+            <br>
+            Instagramも更新しておりますので、どうぞよろしくお願いいたします。
           </span>
           <br>
           商品の詳細は<a href="{{ route('web.merchandise') }}" class="underline">商品紹介ページ</a>でご覧ください。          
