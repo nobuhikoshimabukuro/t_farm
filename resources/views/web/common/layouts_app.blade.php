@@ -239,7 +239,7 @@ header {
                    
         
             <h3 class="m-0 p-0" style="line-height: 60px;">
-                KUKUNA-MANGO
+                KUKUNA FARM
             </h3>
             <nav class="pc">
                 <ul>
@@ -299,7 +299,7 @@ header {
             <!--△△ヘッダーロゴ△△-->
 
             <p class="m-0 p-0" style="line-height: 60px;">
-                KUKUNA-MANGO
+                KUKUNA FARM
             </p>
     
             <!--▽▽カートロゴ▽▽-->
@@ -398,7 +398,7 @@ header {
 
     <footer class="footer">
         <div class="footer-content">
-            &copy; KUKUNA-MANGO. All rights reserved.
+            &copy; KUKUNA FARM. All rights reserved.
         </div>
     </footer>
 
