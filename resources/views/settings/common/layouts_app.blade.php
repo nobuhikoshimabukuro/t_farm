@@ -62,9 +62,9 @@
     <link href="{{ asset('css/settings_style.css') . $system_version }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') . $system_version }}" rel="stylesheet">    
     
-    <link rel="shortcut icon" href="{{ asset('img/logo/kukuna_logo.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ asset('img/logo/kukuna_logo.png')}}" sizes="180x180">
-    <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo.png')}}" sizes="192x192">
+    <link rel="shortcut icon" href="{{ asset('img/logo/kukuna_logo_2.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('img/logo/kukuna_logo_2.png')}}" sizes="180x180">
+    <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo_2.png')}}" sizes="192x192">
     
 
 
@@ -169,7 +169,7 @@
             <!--▽▽ヘッダーロゴ▽▽-->
                 <div class="">
                     <a class="" href="{{ route('settings.menu') }}">
-                        <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                        <img id="" src="{{ asset('img/logo/kukuna_sp_2.png') }}" class="kukuna_logo" alt="kukuna_logo">
                     </a>
                 </div>
             
@@ -212,7 +212,7 @@
              <!--▽▽ヘッダーロゴ▽▽-->
              <div class="">
                 <a class="p-0 m-0" href="{{ route('settings.menu') }}">
-                    <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                    <img id="" src="{{ asset('img/logo/kukuna_sp_2.png') }}" class="kukuna_logo" alt="kukuna_logo">
                 </a>
             </div>
             <!--△△ヘッダーロゴ△△-->

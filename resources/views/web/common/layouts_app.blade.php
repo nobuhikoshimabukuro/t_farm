@@ -67,16 +67,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+1p&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
     
-    <link rel="shortcut icon" href="{{ asset('img/logo/kukuna_logo.ico') . $system_version}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" sizes="180x180">
-    <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" sizes="192x192">
+    <link rel="shortcut icon" href="{{ asset('img/logo/kukuna_logo_2.ico') . $system_version}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('img/logo/kukuna_logo_2.png') . $system_version}}" sizes="180x180">
+    <link rel="icon" type="image/png" href="{{ asset('img/logo/kukuna_logo_2.png') . $system_version}}" sizes="192x192">
     
 
-    <meta name="thumbnail" content="{{ asset('img/logo/kukuna_logo.png') . $system_version}}" >
+    <meta name="thumbnail" content="{{ asset('img/logo/kukuna_logo_2.png') . $system_version}}" >
     <meta name="csrf-token" content="{{ csrf_token() }}">  {{-- CSRFトークン --}}
     <PageMap>
         <DataObject type="thumbnail">
-           <Attribute name="src" value="{{ asset('img/logo/kukuna_logo.png') . $system_version}}"/>
+           <Attribute name="src" value="{{ asset('img/logo/kukuna_logo_2.png') . $system_version}}"/>
               <Attribute name="width" value="120"/>
               <Attribute name="height" value="120"/>
         </DataObject>
@@ -233,13 +233,13 @@ header {
 
             <div class="">
                 <a class="" href="{{ route('web.index') }}">
-                    <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                    <img id="" src="{{ asset('img/logo/kukuna_sp_2.png') }}" class="kukuna_logo" alt="kukuna_logo">
                 </a>
             </div>
                    
         
             <h3 class="m-0 p-0" style="line-height: 60px;">
-                KUKUNA FARM
+                {{-- KUKUNA FARM --}}
             </h3>
             <nav class="pc">
                 <ul>
@@ -247,8 +247,7 @@ header {
                         @if($info["display"])
 
                             @php
-                                $add_class = "";
-
+                                $add_class = "";                                
                                 if($info['route'] == $currentRouteName){
                                     $add_class = "active";
                                 }
@@ -292,14 +291,14 @@ header {
              <!--▽▽ヘッダーロゴ▽▽-->
              <div class="">
                 <a class="p-0 m-0" href="{{ route('web.index') }}">
-                    <img id="" src="{{ asset('img/logo/kukuna_sp.png') }}" class="kukuna_logo" alt="kukuna_logo">
+                    <img id="" src="{{ asset('img/logo/kukuna_sp_2.png') }}" class="kukuna_logo" alt="kukuna_logo">
                     {{-- <img id="" src="{{ asset('img/logo/kukuna.png') }}" class="kukuna_logo" alt="logo"> --}}
                 </a>
             </div>
             <!--△△ヘッダーロゴ△△-->
 
             <p class="m-0 p-0" style="line-height: 60px;">
-                KUKUNA FARM
+                {{-- KUKUNA FARM --}}
             </p>
     
             <!--▽▽カートロゴ▽▽-->
